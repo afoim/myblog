@@ -1,0 +1,94 @@
+baseURL: "https://onani.cn"
+title: "AcoFork Blog"
+LanguageCode: "zh-CN"
+theme: "PaperMod"
+
+# 启用首页个人简介展示
+params:
+  # 是否启用评论。使用giscus代替disqus
+  comments: false
+  # 是否显示代码复制按钮
+  ShowCodeCopyButtons: true
+  # 是否显示面包屑导航
+  ShowBreadCrumbs: false
+  # 是否显示阅读时间  
+  ShowReadingTime: true
+  # 是否显示分享按钮
+  ShowShareButtons: true
+  # 分享按钮配置
+  # ShareButtons: ["linkedin", "twitter"]
+  # 是否禁用主题切换按钮
+  disableThemeToggle: false
+  assets:
+    favicon: "/images/Miyako.jpg"
+  # 首页信息配置
+  homeInfoParams:
+    Title: "欢迎！ 👋"
+    Content: >
+      我来自中国大陆，使用Vercel CDN。这是一个技术博客，分享各类IT技术教程、服务器搭建、网络优化、NAS应用、
+      云服务部署、开源工具探索及数字生活体验。专注于实用解决方案与前沿技术的尝试，
+      为技术爱好者提供简明易懂的学习资源与实践指南。
+  
+  # 设置网站头像和首页头像
+  profileMode:
+    enabled: false # 设为 true 将完全替换 homeInfoParams
+  
+  # 网站头像设置 (显示在导航栏)
+  label:
+    text: "AcoFork Blog"
+    icon: "/images/Miyako.jpg" # 这将显示在导航栏标题旁边
+    iconHeight: 35
+
+  # 社交图标 (显示在简介下方)
+  socialIcons:
+    - name: bilibili
+      url: "https://space.bilibili.com/325903362"
+    - name: github
+      url: "https://github.com/afoim"
+    - name: telegram
+      url: "https://t.me/+blyHrp_GihhhMWVl"
+    # 可以添加更多社交图标
+
+# 顶部导航栏的快捷链接
+menu:
+  main:
+    - identifier: 记录
+      name: 记录
+      url: /record/
+      weight: 9
+    - identifier: categories
+      name: 分类
+      url: /categories/
+      weight: 10
+    - identifier: tags
+      name: 标签
+      url: /tags/
+      weight: 20
+    - identifier: archives
+      name: 归档
+      url: /archives/
+      weight: 30
+    - identifier: search
+      name: 搜索
+      url: /search/
+      weight: 40
+    - identifier: 二次元随机图
+      name: 二次元随机图
+      url: https://pic.onani.cn
+      weight: 50
+    - identifier: IPFS Pixiv
+      name: IPFS Pixiv
+      url: https://ipfs-px.onani.cn
+      weight: 60
+    - identifier: Github 全站反代
+      name: Github 全站反代
+      url: https://gh.onani.cn/afoim
+      weight: 70
+    # 可以添加更多导航链接
+
+# 如果要启用搜索功能，需要添加这个
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # 必须，用于搜索功能
