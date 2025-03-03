@@ -1,7 +1,7 @@
 ---
 title: 傻瓜式AI翻唱软件Replay！选歌！选模型！然后CREATE SONG！
 published: 2024-10-15
-description: 'Replay是一个自动化的AI翻唱软件，用户仅需要提供想要翻唱的歌和RVC模型，Replay会自动进行人声分离，并生成AI翻唱音频，对于新手来说十分友好'
+summary: "Replay是一个自动化的AI翻唱软件，用户仅需要提供想要翻唱的歌和RVC模型，Replay会自动进行人声分离，并生成AI翻唱音频，对于新手来说十分友好"
 cover:
   image: "https://oss.onani.cn/fuwari-blog/img/e3b7630170caac0dc92e9f62d510c1a8.webp"
 tags: [Replay]

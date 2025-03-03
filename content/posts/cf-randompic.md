@@ -1,7 +1,7 @@
 ---
 title: Cloudflare R2+Workers！马上搭建自己的云上图床！
 published: 2024-10-14
-description: '使用R2存储图片，通过Workers连接，最后使用a标签或img标签在网页中嵌入展示，全链路上云'
+summary: "使用R2存储图片，通过Workers连接，最后使用a标签或img标签在网页中嵌入展示，全链路上云"
 cover:
   image: "https://oss.onani.cn/fuwari-blog/img/QmVgqgoC7G8NLS21WvR8j9gf5amu33XvuV68ZrgM5B9iFf.webp"
 tags: [Cloudflare R2, Cloudflare Workers]

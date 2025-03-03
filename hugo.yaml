@@ -1,10 +1,14 @@
-baseURL: "https://onani.cn"
+baseURL: "https://www.onani.cn"
 title: "AcoFork Blog"
 LanguageCode: "zh-CN"
 theme: "PaperMod"
 
 # 启用首页个人简介展示
 params:
+  # 文章许可
+  license: "CC BY 4.0"
+  license_link: "https://creativecommons.org/licenses/by/4.0/"
+
   # 是否启用评论。使用giscus代替disqus
   comments: false
   # 是否显示代码复制按钮

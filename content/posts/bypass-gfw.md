@@ -1,7 +1,7 @@
 ---
 title: 让我们来探讨一下如何绕过GFW
 published: 2024-10-21
-description: 'GFW俗称中国网络国家防火墙，它运用多种技术阻断境内对境外某些网站的访问，比如谷歌、Discord。但对于某些阻断方式，通过一些手段，我们可以绕过GFW来进行访问'
+summary: "GFW俗称中国网络国家防火墙，它运用多种技术阻断境内对境外某些网站的访问，比如谷歌、Discord。但对于某些阻断方式，通过一些手段，我们可以绕过GFW来进行访问"
 cover:
   image: "https://oss.onani.cn/fuwari-blog/img/Snipaste_2024-10-21_19-36-34.webp"
 tags: [tcpioneer]

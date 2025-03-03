@@ -1,7 +1,7 @@
 ---
 title: 飞牛NAS玩机体验
 published: 2024-10-14
-description: '飞牛NAS系统是一个现代的开源的NAS系统。影视刮削在国内属于TOP1，并且刚需的Docker软件也功能全面易用，博主本人也在使用'
+summary: "飞牛NAS系统是一个现代的开源的NAS系统。影视刮削在国内属于TOP1，并且刚需的Docker软件也功能全面易用，博主本人也在使用"
 cover:
   image: "https://oss.onani.cn/fuwari-blog/img/QmUBuX9qmsNP1NHeEeUmuPNdS5ctvk4LchcSsFARDC4vZJ.webp"
 tags: [飞牛NAS]

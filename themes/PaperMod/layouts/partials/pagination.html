@@ -1,0 +1,97 @@
+{{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
+<div class="pagination">
+    {{- if .Paginator.HasPrev }}
+    <a class="pagination__item pagination__item--prev" href="{{ .Paginator.Prev.URL }}">
+        <span>&laquo; 上一页</span>
+    </a>
+    {{- end }}
+
+    {{ $paginator := .Paginator }}
+    {{ $adjacent_links := 2 }}
+    {{ $max_links := (add (mul $adjacent_links 2) 1) }}
+    {{ $lower_limit := (add $adjacent_links 1) }}
+    {{ $upper_limit := (sub $paginator.TotalPages $adjacent_links) }}
+
+    <!-- 如果页面数量小于最大链接数，显示所有页面 -->
+    {{ if le $paginator.TotalPages $max_links }}
+        {{ range $paginator.Pagers }}
+            {{ $.Scratch.Set "page_number_flag" false }}
+            {{ if eq .PageNumber $paginator.PageNumber }}
+            <span class="pagination__item pagination__item--current">
+                {{ .PageNumber }}
+            </span>
+            {{ else }}
+            <a class="pagination__item" href="{{ .URL }}">
+                {{ .PageNumber }}
+            </a>
+            {{ end }}
+        {{ end }}
+
+    <!-- 如果当前页接近开始 -->
+    {{ else if le $paginator.PageNumber $lower_limit }}
+        {{ range first $max_links $paginator.Pagers }}
+            {{ if eq .PageNumber $paginator.PageNumber }}
+            <span class="pagination__item pagination__item--current">
+                {{ .PageNumber }}
+            </span>
+            {{ else }}
+            <a class="pagination__item" href="{{ .URL }}">
+                {{ .PageNumber }}
+            </a>
+            {{ end }}
+        {{ end }}
+        <span class="pagination__item pagination__item--gap">...</span>
+        <a class="pagination__item" href="{{ (index $paginator.Pagers (sub $paginator.TotalPages 1)).URL }}">
+            {{ $paginator.TotalPages }}
+        </a>
+
+    <!-- 如果当前页接近结束 -->
+    {{ else if ge $paginator.PageNumber $upper_limit }}
+        <a class="pagination__item" href="{{ (index $paginator.Pagers 0).URL }}">
+            1
+        </a>
+        <span class="pagination__item pagination__item--gap">...</span>
+        {{ range last $max_links $paginator.Pagers }}
+            {{ if eq .PageNumber $paginator.PageNumber }}
+            <span class="pagination__item pagination__item--current">
+                {{ .PageNumber }}
+            </span>
+            {{ else }}
+            <a class="pagination__item" href="{{ .URL }}">
+                {{ .PageNumber }}
+            </a>
+            {{ end }}
+        {{ end }}
+
+    <!-- 如果当前页在中间 -->
+    {{ else }}
+        <a class="pagination__item" href="{{ (index $paginator.Pagers 0).URL }}">
+            1
+        </a>
+        <span class="pagination__item pagination__item--gap">...</span>
+        {{ range $paginator.Pagers }}
+            {{ if and (ge .PageNumber (sub $paginator.PageNumber $adjacent_links)) (le .PageNumber (add $paginator.PageNumber $adjacent_links)) }}
+                {{ if eq .PageNumber $paginator.PageNumber }}
+                <span class="pagination__item pagination__item--current">
+                    {{ .PageNumber }}
+                </span>
+                {{ else }}
+                <a class="pagination__item" href="{{ .URL }}">
+                    {{ .PageNumber }}
+                </a>
+                {{ end }}
+            {{ end }}
+        {{ end }}
+        <span class="pagination__item pagination__item--gap">...</span>
+        <a class="pagination__item" href="{{ (index $paginator.Pagers (sub $paginator.TotalPages 1)).URL }}">
+            {{ $paginator.TotalPages }}
+        </a>
+    {{ end }}
+
+    {{- if .Paginator.HasNext }}
+    <a class="pagination__item pagination__item--next" href="{{ .Paginator.Next.URL }}">
+        <span>下一页 &raquo;</span>
+    </a>
+    {{- end }}
+</div>
+{{ end }}

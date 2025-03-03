@@ -1,7 +1,7 @@
 ---
 title: 哪吒面板搭建
 published: 2024-12-19
-description: ''
+summary: "哪吒面板是一个涵盖了Linux、Windows、MacOS的服务器监控面板，可以检测CPU、GPU、内存和网络"
 cover:
   image: "https://oss.onani.cn/fuwari-blog/img/QmXCNqtUh761g3rYS3dNeysiZTEBgk1ozamWUNy3bHXnvC"
 tags: [哪吒面板]

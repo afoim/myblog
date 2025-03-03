@@ -1,7 +1,7 @@
 ---
 title: 自建正向代理服务器
 published: 2024-11-22
-description: '不要再买机场了！自建它不香吗？!'
+summary: "不要再买机场了！自建它不香吗？!"
 cover:
   image: "https://oss.onani.cn/fuwari-blog/img/2024-11-21-08-24-54-image.png"
 tags: []
@@ -36,21 +36,25 @@ lang: ''
 
 可以前往这两个仓库进行一键安装~
 
-::github{repo="0x0129/hysteria2"}
+[https://github.com/0x0129/hysteria2](https://github.com/0x0129/hysteria2)
 
-::github{repo="seagullz4/hysteria2"}
+
+[https://github.com/seagullz4/hysteria2](https://github.com/seagullz4/hysteria2)
+
 
 大致安装过程：自签名，不使用acme，不使用端口跳跃
 
 客户端（Hiddify）：
 
-::github{repo="hiddify/hiddify-app"}
+[https://github.com/hiddify/hiddify-app](https://github.com/hiddify/hiddify-app)
+
 
 其他客户端在第二个Github Repo获取
 
 ## 使用旧协议：V2Ray
 
-::github{repo="233boy/v2ray"}
+[https://github.com/233boy/v2ray](https://github.com/233boy/v2ray)
+
 
 VPS安装脚本：`bash <(curl -s -L https://git.io/v2ray.sh)`
 

@@ -1,15 +1,15 @@
 {{- $scratch := newScratch }}
 
 {{- if not .Date.IsZero -}}
-{{- $scratch.Add "meta" (slice (printf "<span title='%s'>%s</span>" (.Date) (.Date | time.Format (default "January 2, 2006" site.Params.DateFormat)))) }}
+{{- $scratch.Add "meta" (slice (printf "<span title='%s'>%s</span>" (.Date) (.Date | time.Format "2006年1月2日"))) }}
 {{- end }}
 
 {{- if (.Param "ShowReadingTime") -}}
-{{- $scratch.Add "meta" (slice (i18n "read_time" .ReadingTime | default (printf "%d min" .ReadingTime))) }}
+{{- $scratch.Add "meta" (slice (printf "预计阅读时间 %d分钟" .ReadingTime)) }}
 {{- end }}
 
 {{- if (.Param "ShowWordCount") -}}
-{{- $scratch.Add "meta" (slice (i18n "words" .WordCount | default (printf "%d words" .WordCount))) }}
+{{- $scratch.Add "meta" (slice (printf "%d个字" .WordCount)) }}
 {{- end }}
 
 {{- if not (.Param "hideAuthor") -}}

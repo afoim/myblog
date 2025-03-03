@@ -93,7 +93,7 @@
 </article>
 {{- end }}
 
-{{- if gt $paginator.TotalPages 1 }}
+<!-- {{- if gt $paginator.TotalPages 1 }}
 <footer class="page-footer">
   <nav class="pagination">
     {{- if $paginator.HasPrev }}
@@ -114,7 +114,10 @@
     {{- end }}
   </nav>
 </footer>
-{{- end }}
+{{- end }} -->
+
+<!-- 添加自定义的分页 -->
+{{ partial "pagination.html" . }}
 
 {{- end }}{{/* end profileMode */}}
 

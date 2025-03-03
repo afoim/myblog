@@ -1,7 +1,7 @@
 ---
 title: 使用ArchiSteamFarm进行Steam自动挂卡
 published: 2024-12-18
-description: ''
+summary: "ArchiSteamFarm是一个Steam自动挂卡工具，它可以自动识别哪些游戏没有挂卡并且自动挂卡，高效率获得Steam集换式卡牌"
 cover:
   image: "https://oss.onani.cn/fuwari-blog/img/QmPEHve8DdVZdwxAZ26BPgbc6cDCBaKC76VVijqVoMBY2k"
 tags: [Steam]

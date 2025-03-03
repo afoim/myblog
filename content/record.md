@@ -1,7 +1,7 @@
 ---
 title: 记录
 published: 1999-01-01
-description: ''
+summary: ''
 cover:
   image: ""
 tags: [Record]

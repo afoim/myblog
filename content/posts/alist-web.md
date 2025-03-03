@@ -1,7 +1,7 @@
 ---
 title: 教你把AList的前端部署到CF Pages！让你的AList秒加载！
 published: 2024-10-15
-description: '将AList Web部署到CF Pages可以显著提升访问者的浏览体验，因为静态资源都在CF的边缘节点，而后端使用API交互，而不是由源服务器路由所有流量，既能减轻源服务器的负载，又能使用CF Pages的不回源优势，一箭双雕'
+summary: "将AList Web部署到CF Pages可以显著提升访问者的浏览体验，因为静态资源都在CF的边缘节点，而后端使用API交互，而不是由源服务器路由所有流量，既能减轻源服务器的负载，又能使用CF Pages的不回源优势，一箭双雕"
 cover:
   image: "https://oss.onani.cn/fuwari-blog/img/QmSmcktDEJaWdDvFQeuNTJ9ps8R3PcLWyhSrbxoLEq2b2x.webp"
 tags: [AList, Cloudflare Pages]
@@ -24,7 +24,8 @@ lang: ''
 
 1. Fork仓库：
    
-   ::github{repo="alist-org/alist-web"}
+   [https://github.com/alist-org/alist-web](https://github.com/alist-org/alist-web)
+
 
 2. 更改项目根目录的`env.production`文件为你的后端服务器地址  
    ![QmduQJq3TydzvLzBn47zLxp2MR1iD2sxm67EzFUFuEBvQa.webp](https://oss.onani.cn/fuwari-blog/img/6f2871ca5d35e1e974d89611835f3a2c7fd205e7.webp)

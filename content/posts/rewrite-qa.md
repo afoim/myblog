@@ -1,7 +1,7 @@
 ---
 title: 关于Rewrite MV无法播放\没有画面的解决方法
 published: 2024-11-28
-description: ''
+summary: "Rewrite打完才发现MV一个没看到"
 cover:
   image: "https://oss.onani.cn/fuwari-blog/img/bafybeihhyuk3zjqkisf66swxft4j5srv3g7wozy3zn4ykpsh3cuveuuwb4"
 tags: [Rewrite]

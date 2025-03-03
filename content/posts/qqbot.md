@@ -1,7 +1,7 @@
 ---
 title: 使用NoneBot2搭建你的QQBot！
 published: 2024-11-20
-description: '使用NapCat连接NoneBot2，打造自己的聊天机器人'
+summary: "使用NapCat连接NoneBot2，打造自己的聊天机器人"
 cover:
   image: "https://oss.onani.cn/fuwari-blog/img/QmcMSSKysZmgUCUk9W7hQUvZCtVSFH6hGKHctg99yo1yDE.webp"
 tags: [QQBot]

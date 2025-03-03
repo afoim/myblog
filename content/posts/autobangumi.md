@@ -1,7 +1,7 @@
 ---
 title: 教你搭建自己的番剧库，实现自动追番！
 published: 2025-02-25
-description: '使用AutuBangumi连接qBittorrent下载番剧，然后使用刮削软件刮削，设置一遍，享受终身'
+summary: "使用AutuBangumi连接qBittorrent下载番剧，然后使用刮削软件刮削，设置一遍，享受终身"
 cover:
   image: "https://oss.onani.cn/fuwari-blog/img/QmXYf2u6BZMseAzjPUhcHsdfdhQpc3XkdjuEi4VvE1BkTn.webp"
 tags: [AutoBangumi]

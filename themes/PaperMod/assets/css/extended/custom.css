@@ -1,0 +1,57 @@
+/* 文章许可协议 */
+.post-license {
+    margin-top: 1rem;
+    padding: 0.8rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.9rem;
+    color: var(--secondary);
+}
+
+/* 首页文章分页 */
+.pagination {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+    gap: 8px;
+}
+
+.pagination__item {
+    display: inline-block;
+    min-width: 2.5rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+    color: var(--primary);
+    background-color: var(--entry);
+    border-radius: 4px;
+    padding: 0 0.5rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.pagination__item:hover {
+    background-color: var(--border);
+    color: var(--primary); /* 确保文字颜色仍然清晰可见 */
+}
+
+
+.pagination__item--current {
+    background-color: var(--primary);
+    color: var(--entry);
+    pointer-events: none;
+}
+
+.pagination__item--gap {
+    background: none;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .pagination__item {
+        min-width: 2rem;
+        height: 2rem;
+        line-height: 2rem;
+        padding: 0 0.4rem;
+    }
+}

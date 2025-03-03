@@ -1,7 +1,7 @@
 ---
 title: 利用阿里云云函数 FC 搭建AList后端，每月仅需5毛！
 published: 2025-01-13
-description: '阿里云云函数 FC是一个弹性的计算平台，可托管多种服务。搭配AList的前后端分离部署，实现比VPS更低的价格，得到更好的体验'
+summary: "阿里云云函数 FC是一个弹性的计算平台，可托管多种服务。搭配AList的前后端分离部署，实现比VPS更低的价格，得到更好的体验"
 cover:
   image: "https://oss.onani.cn/fuwari-blog/img/47518d4403328a0fcb716f0e06fc7f608e6c65b7.webp"
 tags: [阿里云云函数 FC]

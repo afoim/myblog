@@ -1,7 +1,7 @@
 ---
 title: Phira多人联机服务器搭建/使用教程
 published: 2024-11-06
-description: '懒人可以直接下载预构建的可执行文件，但如果想获得日志需要自备Rust环境'
+summary: "懒人可以直接下载预构建的可执行文件，但如果想获得日志需要自备Rust环境"
 cover:
   image: "https://oss.onani.cn/fuwari-blog/img/2024-11-06-08-20-39-image.webp"
 tags: [Phira]
@@ -12,7 +12,8 @@ lang: ''
 
 # 直接下载服务端文件并运行
 
-::github{repo="afoim/phira-mp-autobuild"}
+[https://github.com/afoim/phira-mp-autobuild](https://github.com/afoim/phira-mp-autobuild)
+
 
 这里有一些由Github Action自动构建的服务端文件，涵盖以下系统和架构![](https://oss.onani.cn/fuwari-blog/img/2024-11-06-08-28-34-image.webp)
 

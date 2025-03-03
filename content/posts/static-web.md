@@ -1,7 +1,7 @@
 ---
 title: 静态页面服务商比较+智能网关测速脚本
 published: 2024-11-28
-description: '将你的静态网站发布到不同的服务商，并且自动在客户端测速并且选择最快那一个进入'
+summary: "将你的静态网站发布到不同的服务商，并且自动在客户端测速并且选择最快那一个进入"
 cover:
   image: "https://oss.onani.cn/fuwari-blog/img/2024-11-28-08-37-49-image.png"
 tags: [Vercel, Render, Cloudflare Pages, EdgeOne, Github Pages, Fleek, Surge]
@@ -269,10 +269,12 @@ Netlify 是一个高性能的静态网站托管平台，特别适合那些对访
 
 > 使用了这么多的节点，肯定想要选择最快的或者在用户那边装逼，所以这边给一个智能网关测速HTML代码，它去请求了`https://acofork.us.kg/data.json`并且挨个给里面的`博客`节点测速，然后自动选择最快的那个。如果你只是小项目使用，可以使用硬编码，这里就给出Git仓库
 
-::github{repo="afoim/Smart_Gateway"}
+[https://github.com/afoim/Smart_Gateway](https://github.com/afoim/Smart_Gateway)
+
 
 # 简易导航页HTML代码：
 
 > 刚才说了“它去请求了`https://acofork.us.kg/data.json`并且挨个给里面的`博客`节点测速，然后自动选择最快的那个。”这就是`data.json`所在的地方
 
-::github{repo="afoim/Web_test"}
+[https://github.com/afoim/Web_test](https://github.com/afoim/Web_test)
+

@@ -1,7 +1,7 @@
 ---
 title: Fuwari静态博客+Cloudflare Pages，只需一个域名，带你搭建博主同款博客！
 published: 2024-10-14
-description: 'Fuwari是一个静态博客框架，Cloudflare Pages是一个托管静态网站的服务，将他俩结合即可得到一个快速安全无需托管的高效博客'
+summary: "Fuwari是一个静态博客框架，Cloudflare Pages是一个托管静态网站的服务，将他俩结合即可得到一个快速安全无需托管的高效博客"
 cover:
   image: "https://oss.onani.cn/fuwari-blog/img/2024-10-15-09-04-45-image.webp"
 tags: [Fuwari, Cloudflare Pages]
@@ -36,7 +36,8 @@ lang: ''
 
 1. Fork仓库：
    
-   ::github{repo="saicaca/fuwari"}
+   [https://github.com/saicaca/fuwari](https://github.com/saicaca/fuwari)
+
 
 2. 避免有小废物不会Fork仓库，这里附上图片教程
 

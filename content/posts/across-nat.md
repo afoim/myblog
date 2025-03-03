@@ -1,7 +1,7 @@
 ---
 title: 究极喂饭教程，手把手教你内网穿透
 published: 2024-10-28
-description: '使用Zerotier，Tailscale，Cloudflare Tunnel可以实现多种内网穿透，其中有适用于个人访问的，也有适用于公众访问的'
+summary: "使用Zerotier，Tailscale，Cloudflare Tunnel可以实现多种内网穿透，其中有适用于个人访问的，也有适用于公众访问的"
 cover:
   image: "https://oss.onani.cn/fuwari-blog/img/2024-10-28-17-00-25-image.webp"
 tags: [Zerotier, Tailscale, Cloudflare Tunnel, STUN]

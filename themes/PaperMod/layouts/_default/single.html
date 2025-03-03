@@ -49,6 +49,10 @@
       <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
       {{- end }}
     </ul>
+
+    <!-- 添加许可协议 -->
+    {{ partial "post-license.html" . }}
+
     {{- if (.Param "ShowPostNavLinks") }}
     {{- partial "post_nav_links.html" . }}
     {{- end }}
