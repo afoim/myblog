@@ -14,7 +14,6 @@ lang: ''
 
 [https://github.com/afoim/phira-mp-autobuild](https://github.com/afoim/phira-mp-autobuild)
 
-
 这里有一些由Github Action自动构建的服务端文件，涵盖以下系统和架构![](https://oss.onani.cn/fuwari-blog/img/2024-11-06-08-28-34-image.webp)
 
 也可以前往[Multiplayer Server | Dmocken的Phira下载站](https://phira.dmocken.top/Multiplayer%20Server)自行寻找

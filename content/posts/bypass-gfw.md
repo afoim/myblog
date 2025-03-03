@@ -5,7 +5,7 @@ summary: "GFW俗称中国网络国家防火墙，它运用多种技术阻断境�
 cover:
   image: "https://oss.onani.cn/fuwari-blog/img/Snipaste_2024-10-21_19-36-34.webp"
 tags: [tcpioneer]
-categories: '开发'
+categories: '随笔'
 draft: false 
 lang: ''
 ---

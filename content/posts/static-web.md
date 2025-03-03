@@ -5,7 +5,7 @@ summary: "将你的静态网站发布到不同的服务商，并且自动在客�
 cover:
   image: "https://oss.onani.cn/fuwari-blog/img/2024-11-28-08-37-49-image.png"
 tags: [Vercel, Render, Cloudflare Pages, EdgeOne, Github Pages, Fleek, Surge]
-categories: '运维'
+categories: '体验'
 draft: false 
 lang: ''
 ---
@@ -65,7 +65,9 @@ Render 是一个新兴的静态网站托管服务，提供了自动化部署和�
 Cloudflare Pages 是一个由 Cloudflare 提供的静态网站托管平台，它的抗 DDoS 防护非常强大，适合对安全性要求较高的网站。借助 Cloudflare 的全球 CDN，站点访问速度也很快。
 
 #### 4. [TencentCloud EdgeOne](https://edgeone.ai/)
+
 ### 别用，会吞Github提交，导致你的网站卡在旧版，我已经跑路了
+
 **优点**：
 
 - 支持与 Git 集成，自动部署
@@ -271,10 +273,8 @@ Netlify 是一个高性能的静态网站托管平台，特别适合那些对访
 
 [https://github.com/afoim/Smart_Gateway](https://github.com/afoim/Smart_Gateway)
 
-
 # 简易导航页HTML代码：
 
 > 刚才说了“它去请求了`https://acofork.us.kg/data.json`并且挨个给里面的`博客`节点测速，然后自动选择最快的那个。”这就是`data.json`所在的地方
 
 [https://github.com/afoim/Web_test](https://github.com/afoim/Web_test)
-

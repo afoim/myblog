@@ -5,7 +5,7 @@ summary: "使用R2存储图片，通过Workers连接，最后使用a标签或img
 cover:
   image: "https://oss.onani.cn/fuwari-blog/img/QmVgqgoC7G8NLS21WvR8j9gf5amu33XvuV68ZrgM5B9iFf.webp"
 tags: [Cloudflare R2, Cloudflare Workers]
-categories: '开发'
+categories: '教程'
 draft: false 
 lang: ''
 ---

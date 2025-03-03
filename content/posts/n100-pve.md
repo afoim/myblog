@@ -5,7 +5,7 @@ summary: "在N100小主机上安装PVE，然后在其中安装飞牛NAS和Debian
 cover:
   image: "https://oss.onani.cn/fuwari-blog/img/N100-PVE_cover.webp"
 tags: [PVE]
-categories: '开发'
+categories: '记录'
 draft: false 
 lang: ''
 ---

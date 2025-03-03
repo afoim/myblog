@@ -5,7 +5,7 @@ summary: "飞牛NAS系统是一个现代的开源的NAS系统。影视刮削在�
 cover:
   image: "https://oss.onani.cn/fuwari-blog/img/QmUBuX9qmsNP1NHeEeUmuPNdS5ctvk4LchcSsFARDC4vZJ.webp"
 tags: [飞牛NAS]
-categories: 'NAS'
+categories: '体验'
 draft: false 
 lang: ''
 ---

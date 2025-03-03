@@ -5,18 +5,20 @@ summary: "ArchiSteamFarm是一个Steam自动挂卡工具，它可以自动识别
 cover:
   image: "https://oss.onani.cn/fuwari-blog/img/QmPEHve8DdVZdwxAZ26BPgbc6cDCBaKC76VVijqVoMBY2k"
 tags: [Steam]
-categories: '小技巧'
+categories: '教程'
 draft: false 
 lang: ''
 ---
 
 # 可用的目标作业系统
+
 Windows x86/Arm64
 Linux x86/Arm64/Arm32
 OS X x86/Arm64
 （和其余任何可以获取有效 .NET Core 运行时的地方工作。基于Github仓库源码手动编译）
 
 # 安装&使用 ArchiSteamFarm
+
 https://github.com/JustArchiNET/ArchiSteamFarm
 
 或前往Release：https://github.com/JustArchiNET/ArchiSteamFarm/releases/latest
@@ -32,7 +34,6 @@ https://github.com/JustArchiNET/ArchiSteamFarm
 
 如果你配置了Steam手机验证器，此时应该会弹出登录请求，允许它。然后前往终端界面输入 **Y** 并回车
 此时终端应该输出：**成功以 XXXXXXXXXX 的身份登录。**
-
 
 ![image](https://oss.onani.cn/fuwari-blog/img/QmcuktSJjWFmufsLmrYRsbLa9ns7pvRXKWZ5EUyirasKt6)
 

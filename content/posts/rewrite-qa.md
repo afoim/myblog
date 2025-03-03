@@ -5,12 +5,13 @@ summary: "Rewrite打完才发现MV一个没看到"
 cover:
   image: "https://oss.onani.cn/fuwari-blog/img/bafybeihhyuk3zjqkisf66swxft4j5srv3g7wozy3zn4ykpsh3cuveuuwb4"
 tags: [Rewrite]
-categories: '小技巧'
+categories: '随笔'
 draft: false 
 lang: ''
 ---
 
 # 我使用的解决方法（Windows 10及以上带有Microsoft Store的系统）
+
 安装这个即可
 
 ![image](https://oss.onani.cn/fuwari-blog/img/bafkreieb2qknggudxx7sc723jheso6grhgemznjqb5n6yqwsrvgqkqn4ba)
@@ -20,6 +21,7 @@ lang: ''
 ![image](https://oss.onani.cn/fuwari-blog/img/bafkreihujn3jctibvixv4trpsu5j4d2v7de2ibzea6xe6pzmithymffpqu)
 
 # 汉化组提供的解决方法
+
 安装：[K-Lite Basic解码器](https://www.codecguide.com/download_k-lite_codec_pack_basic.htm)
 
 然后游戏内改为 MCI

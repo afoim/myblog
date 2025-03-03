@@ -5,7 +5,7 @@ summary: "使用SaaS双域名来让你的网站解析的IP进行分流优选，�
 cover:
   image: "https://oss.onani.cn/fuwari-blog/img/QmePpCr1YsDEBjm5f4TWc5FiEJtQp9ppzHqAuMTvvzEmyz.webp"
 tags: [Cloudflare SaaS]
-categories: '运维'
+categories: '教程'
 draft: false 
 lang: ''
 ---

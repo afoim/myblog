@@ -5,7 +5,7 @@ summary: "Replay是一个自动化的AI翻唱软件，用户仅需要提供想�
 cover:
   image: "https://oss.onani.cn/fuwari-blog/img/e3b7630170caac0dc92e9f62d510c1a8.webp"
 tags: [Replay]
-categories: 'AI翻唱'
+categories: '教程'
 draft: false 
 lang: ''
 ---

@@ -4,8 +4,8 @@ published: 2025-01-13
 summary: "阿里云云函数 FC是一个弹性的计算平台，可托管多种服务。搭配AList的前后端分离部署，实现比VPS更低的价格，得到更好的体验"
 cover:
   image: "https://oss.onani.cn/fuwari-blog/img/47518d4403328a0fcb716f0e06fc7f608e6c65b7.webp"
-tags: [阿里云云函数 FC]
-categories: '开发'
+tags: [阿里云云函数 FC, AList]
+categories: '教程'
 draft: false 
 lang: ''
 ---
@@ -39,14 +39,19 @@ lang: ''
 ![image](https://oss.onani.cn/fuwari-blog/img/QmdajYeRyt1u3BSmRdGx8uUHKamGDkwoRe4TmEFZsJsaqS)
 
 7. 然后点击左下角的创建
+
 8. 然后你会进入到函数的控制面板，依次点击 配置 -> 网络 -> 网络 编辑 -> 允许访问VPC:是 -> 自动配置。依次点击 配置 -> 存储 -> NAS文件存储 编辑 -> 挂载 NAS 文件系统:启用 -> 自动配置。依次点击 日志 -> 开通日志服务
+
 9. 现在回到 代码 界面，点击部署代码。稍等片刻会提示部署成功，然后点击 函数详情内的 HTTP触发器 ，复制公网访问地址。这个就是我们前文提到的要写到前端根目录的 env.production 文件的URL，将其填写进去，例如
    
    ```shell
    VITE_API_URL = "https://aliyun-fc-alist.run"
    ```
+
 10. 提交你的新更改，前端会自动重新构建
+
 11. 尝试直接访问你的AList前端URL，它应该会顺利进入到AList的登录页面
+
 12. 此时查看控制面板的 实例 是否有一条新的实例正在工作，如果有，再前往日志查看该实例日志，你会看到AList初始化时生成的管理员密码，拿这个密码到前端URL登录AList，然后就可以正常使用了
 
 ---

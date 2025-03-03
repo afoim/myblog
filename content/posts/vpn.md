@@ -14,7 +14,7 @@ lang: ''
 
 下面内容参考自：[CF VLESS 从入门到精通 cmliu/edgetunnel 必看内容 免费节点 优选订阅 Workers & Pages CM喂饭干货满满24 | CMLiussss Blog](https://vercel.blog.cmliussss.com/p/CM24/) 请支持原创作者！
 
-1.  https://github.com/cmliu/edgetunnel/archive/refs/heads/main.zip 将它上传到你的Cloudflare Pages项目（没有Cloudflare账号？先去因特网上搜索教程注册一个！如果遇到卡慢可以试试看科学上网）
+1. https://github.com/cmliu/edgetunnel/archive/refs/heads/main.zip 将它上传到你的Cloudflare Pages项目（没有Cloudflare账号？先去因特网上搜索教程注册一个！如果遇到卡慢可以试试看科学上网）
 2. 进入 https://it-tools.tech/uuid-generator 随机获取一个uuid
 3. 添加一个名称为`UUID`的变量绑定，值为第二步随机获取的（请不要泄露给他人！）
 4. 重新上传第一步的`main.zip`。让Cloudflare重新部署page以适配新变量
@@ -38,9 +38,7 @@ lang: ''
 
 [https://github.com/0x0129/hysteria2](https://github.com/0x0129/hysteria2)
 
-
 [https://github.com/seagullz4/hysteria2](https://github.com/seagullz4/hysteria2)
-
 
 大致安装过程：自签名，不使用acme，不使用端口跳跃
 
@@ -48,13 +46,11 @@ lang: ''
 
 [https://github.com/hiddify/hiddify-app](https://github.com/hiddify/hiddify-app)
 
-
 其他客户端在第二个Github Repo获取
 
 ## 使用旧协议：V2Ray
 
 [https://github.com/233boy/v2ray](https://github.com/233boy/v2ray)
-
 
 VPS安装脚本：`bash <(curl -s -L https://git.io/v2ray.sh)`
 

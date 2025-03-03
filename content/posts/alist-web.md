@@ -5,7 +5,7 @@ summary: "将AList Web部署到CF Pages可以显著提升访问者的浏览体�
 cover:
   image: "https://oss.onani.cn/fuwari-blog/img/QmSmcktDEJaWdDvFQeuNTJ9ps8R3PcLWyhSrbxoLEq2b2x.webp"
 tags: [AList, Cloudflare Pages]
-categories: '运维'
+categories: '教程'
 draft: false 
 lang: ''
 ---
@@ -25,7 +25,6 @@ lang: ''
 1. Fork仓库：
    
    [https://github.com/alist-org/alist-web](https://github.com/alist-org/alist-web)
-
 
 2. 更改项目根目录的`env.production`文件为你的后端服务器地址  
    ![QmduQJq3TydzvLzBn47zLxp2MR1iD2sxm67EzFUFuEBvQa.webp](https://oss.onani.cn/fuwari-blog/img/6f2871ca5d35e1e974d89611835f3a2c7fd205e7.webp)

@@ -5,7 +5,7 @@ summary: "IPFS是一个多节点的文件托管系统，你可以在上面共享
 cover:
   image: "https://oss.onani.cn/fuwari-blog/img/2024-10-17-09-55-55-image.webp"
 tags: [Fleek, IPFS]
-categories: '运维'
+categories: '随笔'
 draft: false 
 lang: ''
 ---

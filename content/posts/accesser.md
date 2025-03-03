@@ -6,7 +6,7 @@ cover:
   image: "https://oss.onani.cn/fuwari-blog/img/6d0a5793fe6b1f11cba9a4912fba4392be5004c2.webp"
   hiddenInSingle: false
 tags: [Accesser]
-categories: '开发'
+categories: '教程'
 draft: false 
 lang: ''
 ---
@@ -14,7 +14,6 @@ lang: ''
 # Accesser是什么？
 
 [https://github.com/URenko/Accesser](https://github.com/URenko/Accesser)
-
 
 Accesser是一个HTTP代理。它通过中间人的身份处理终端的HTTP出口流量，以绕过SNI阻断。我们正常访问网站时，客户端会发送Client Hello，而这个报文是明文，并且通常会携带ServerName，这个时候GFW就能通过检测ServerName来进行阻断，代替网站向客户端发送一个RST报文重置连接，做到网站被“墙”的效果
 
