@@ -29,7 +29,7 @@ params:
   homeInfoParams:
     Title: "欢迎！ 👋"
     Content: >
-      我来自[中国大陆](https://www.gov.cn)，本站使用[Vercel CDN](https://vercel.com)，框架为[Hugo](https://gohugo.io/)，主题为[PaperMod](https://github.com/adityatelange/hugo-PaperMod)。这是一个技术博客，分享各类IT技术教程、服务器搭建、网络优化、NAS应用、
+      我来自[中国大陆](https://www.gov.cn)，本站部署在[Cloudflare Pages](https://www.cloudflare-cn.com/developer-platform/products/pages/)，框架为[Hugo](https://gohugo.io/)，主题为[PaperMod](https://github.com/adityatelange/hugo-PaperMod)。这是一个技术博客，分享各类IT技术教程、服务器搭建、网络优化、NAS应用、
       云服务部署、开源工具探索及数字生活体验。专注于实用解决方案与前沿技术的尝试，
       为技术爱好者提供简明易懂的学习资源与实践指南。
   
