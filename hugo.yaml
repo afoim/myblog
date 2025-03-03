@@ -24,7 +24,7 @@ params:
   # 是否禁用主题切换按钮
   disableThemeToggle: false
   assets:
-    favicon: "/images/Miyako.jpg"
+    # favicon: "/images/Miyako.jpg"
   # 首页信息配置
   homeInfoParams:
     Title: "欢迎！ 👋"
@@ -40,7 +40,7 @@ params:
   # 网站头像设置 (显示在导航栏)
   label:
     text: "AcoFork Blog"
-    icon: "/images/Miyako.jpg" # 这将显示在导航栏标题旁边
+    # icon: "/images/Miyako.jpg" # 这将显示在导航栏标题旁边
     iconHeight: 35
 
   # 社交图标 (显示在简介下方)

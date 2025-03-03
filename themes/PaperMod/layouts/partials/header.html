@@ -45,7 +45,7 @@
             {{- $label_text := (site.Params.label.text | default site.Title) }}
             {{- if site.Title }}
             <a href="{{ "" | absLangURL }}" accesskey="h" title="{{ $label_text }} (Alt + H)">
-                {{- if site.Params.label.icon }}
+                <!-- {{- if site.Params.label.icon }}
                 {{- $img := resources.Get site.Params.label.icon }}
                 {{- if $img }}
                     {{- $processableFormats := (slice "jpg" "jpeg" "png" "tif" "bmp" "gif") -}}
@@ -68,7 +68,9 @@
                 {{- end -}}
                 {{- else if hasPrefix site.Params.label.iconSVG "<svg" }}
                     {{ site.Params.label.iconSVG | safeHTML }}
-                {{- end -}}
+                {{- end -}} -->
+                <img src="https://q2.qlogo.cn/headimg_dl?dst_uin=2726730791&spec=5" alt="logo" height="30">
+
                 {{- $label_text -}}
             </a>
             {{- end }}
