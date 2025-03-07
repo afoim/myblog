@@ -16,7 +16,7 @@ lang: ''
 
 这里有一些由Github Action自动构建的服务端文件，涵盖以下系统和架构![](https://oss.onani.cn/fuwari-blog/img/2024-11-06-08-28-34-image.webp)
 
-也可以前往[Multiplayer Server | Dmocken的Phira下载站](https://phira.dmocken.top/Multiplayer%20Server)自行寻找
+也可以前往[Multiplayer Server | Dmocken的Phira下载站](https://phira.dmocken.top/Multiplayer%20Server%E5%A4%9A%E4%BA%BA%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8)自行寻找
 
 寻找适用于你的系统的文件，下载下来并执行即可。默认服务端将会在你的主机12346端口上开放，如果需要自定义端口，请使用`--port`参数指定端口。然后即可使用Phira来填写IP/域名:端口来连接
 
