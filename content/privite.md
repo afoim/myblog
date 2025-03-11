@@ -37,7 +37,7 @@ draft: false
   - 遵循[GitHub的隐私政策](https://docs.github.com/zh/site-policy/privacy-policies/github-privacy-statement)
   - 默认不加载，您可以：
     1. 在首次访问时通过Cookie consent弹窗选择是否启用
-    2. 随时点击页面底部的"管理Cookie偏好"按钮更改设置
+    2. 随时点击相关页面底部的"管理隐私设置"按钮更改设置
     3. 禁用后评论功能将完全不会加载，不会有任何数据传输
 
 ### 3.3 Cookie管理
