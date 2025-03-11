@@ -229,7 +229,7 @@ hugo server
 
 构建命令：`hugo --gc`
 
-环境变量（适用于Vercel）： Key：`HUGO_VERSION` Value：`0.145.0`
+环境变量： Key：`HUGO_VERSION` Value：`0.145.0`
 
 ---
 
