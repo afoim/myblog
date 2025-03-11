@@ -88,10 +88,10 @@ params:
 # 顶部导航栏的快捷链接
 menu:
   main:
-    - identifier: 记录
-      name: 记录
-      url: /record/
-      weight: 9
+    # - identifier: 记录
+    #   name: 记录
+    #   url: /record/
+    #   weight: 9
     - identifier: categories
       name: 分类
       url: /categories/
