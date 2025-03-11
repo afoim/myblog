@@ -1,7 +1,20 @@
 baseURL: "https://www.onani.cn"
 title: "AcoFork Blog"
-LanguageCode: "zh-CN"
+defaultContentLanguage: "zh-cn"  # 替换原来的 LanguageCode
 theme: "PaperMod"
+
+# 添加 Markdown 渲染配置
+markup:
+  goldmark:
+    renderer:
+      unsafe: true  # 允许渲染原始HTML标签
+
+# 忽略特定警告信息
+ignoreErrors: 
+  - error-remote-getjson
+
+ignoreLogs:
+  - warning-goldmark-raw-html
 
 # 启用首页个人简介展示
 params:
@@ -10,7 +23,7 @@ params:
   license_link: "https://creativecommons.org/licenses/by/4.0/"
 
   # 是否启用评论。使用giscus代替disqus
-  comments: false
+  comments: true
   # 是否显示代码复制按钮
   ShowCodeCopyButtons: true
   # 是否显示面包屑导航
@@ -33,6 +46,25 @@ params:
       云服务部署、开源工具探索及数字生活体验。专注于实用解决方案与前沿技术的尝试，
       为技术爱好者提供简明易懂的学习资源与实践指南。
   
+  # Cookie consent 设置
+  cookieConsent:
+    enable: true
+    type: opt-in  # 确保是opt-in模式
+    layout: basic
+    content:
+      message: "本站使用Cookie来提供更好的浏览体验。"
+      dismiss: "同意"
+      link: "了解更多"
+      href: "/cookie-policy/"
+  
+  # 添加GDPR合规声明
+  privacy:
+    enabled: true     # 确保为true
+    hasCookie: true   # 确保为true
+    httpCookies:
+      enable: true
+      content: "本网站使用Cookie和类似技术来改善您的体验。继续使用本站即表示您同意我们的Cookie使用政策。"
+
   # 设置网站头像和首页头像
   profileMode:
     enabled: false # 设为 true 将完全替换 homeInfoParams
@@ -76,18 +108,14 @@ menu:
       name: 搜索
       url: /search/
       weight: 40
-    - identifier: 二次元随机图
-      name: 二次元随机图
-      url: https://pic.onani.cn
+    - identifier: about
+      name: 关于我们
+      url: /about/
+      weight: 45
+    - identifier: private
+      name: 隐私政策
+      url: /privite/
       weight: 50
-    - identifier: IPFS Pixiv
-      name: IPFS Pixiv
-      url: https://ipfs-px.onani.cn
-      weight: 60
-    - identifier: Github 全站反代
-      name: Github 全站反代
-      url: https://gh.onani.cn/afoim
-      weight: 70
     # 可以添加更多导航链接
 
 # 如果要启用搜索功能，需要添加这个

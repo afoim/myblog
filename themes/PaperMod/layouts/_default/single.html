@@ -62,25 +62,11 @@
   </footer>
 
   {{- if (.Param "comments") }}
-  {{- partial "comments.html" . }}
+  <!-- 预先创建评论容器 -->
+  <div class="giscus-container" style="margin-top: 2rem; width: 100%; max-width: var(--post-width, 720px);">
+    <!-- GDPR提示会由consent.html动态插入 -->
+  </div>
   {{- end }}
 </article>
-
-  <!-- Giscus评论 -->
-  <script src="https://giscus.app/client.js"
-  data-repo="afoim/myblog"
-  data-repo-id="R_kgDOOB-WEw"
-  data-category="Announcements"
-  data-category-id="DIC_kwDOOB-WE84CnfcQ"
-  data-mapping="pathname"
-  data-strict="0"
-  data-reactions-enabled="1"
-  data-emit-metadata="0"
-  data-input-position="bottom"
-  data-theme="preferred_color_scheme"
-  data-lang="zh-CN"
-  crossorigin="anonymous"
-  async>
-</script>
 
 {{- end }}{{/* end main */}}

@@ -1,0 +1,473 @@
+<style>
+    /* GDPR通知栏样式 */
+    #consent-notice {
+        padding: 1rem;
+        display: none;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background: var(--theme);
+        color: var(--primary);
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        z-index: 9999;
+    }
+
+    /* 按钮基础样式 */
+    .btn {
+        margin: 0.5rem;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+        border: 1px solid var(--border);
+        background: var(--entry);
+        color: var(--primary);
+        transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+        background: var(--border);
+    }
+
+    /* 弹出层样式 */
+    #consent-overlay {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        display: none;
+        background: rgba(0,0,0,0.5);
+        z-index: 999999;
+        overflow: auto;
+        cursor: pointer;
+    }
+
+    #consent-overlay.active {
+        display: flex;
+    }
+
+    #consent-overlay > div {
+        background: var(--theme);
+        color: var(--primary);
+        width: 100%;
+        max-width: 30rem;
+        padding: 2rem;
+        margin: auto;
+        cursor: initial;
+        border-radius: 8px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
+    /* 复选框容器样式优化 */
+    #consent-overlay .checkbox-container {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+        padding: 1.5rem;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    #consent-overlay .checkbox-container:hover {
+        background: var(--border);
+    }
+
+    /* 复选框样式优化 */
+    #consent-overlay input[type="checkbox"] {
+        appearance: none;
+        -webkit-appearance: none;
+        width: 20px;
+        height: 20px;
+        border: 2px solid var(--border);
+        border-radius: 4px;
+        margin: 0.3rem 1rem 0 0;
+        cursor: pointer;
+        position: relative;
+        background: var(--entry);
+    }
+
+    #consent-overlay input[type="checkbox"]:checked {
+        background: var(--primary);
+        border-color: var(--primary);
+    }
+
+    #consent-overlay input[type="checkbox"]:checked::after {
+        content: "✓";
+        color: var(--theme);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 14px;
+    }
+
+    #consent-overlay input[type="checkbox"]:disabled {
+        background: var(--border);
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
+
+    /* 复选框标签样式 */
+    #consent-overlay .checkbox-container label {
+        flex: 1;
+        cursor: pointer;
+    }
+
+    #consent-overlay .checkbox-container h3 {
+        margin: 0 0 0.5rem 0;
+        font-size: 1rem;
+    }
+
+    #consent-overlay .checkbox-container p {
+        margin: 0;
+        font-size: 0.9rem;
+        opacity: 0.8;
+    }
+
+    /* 响应式调整 */
+    @media (max-width: 767px) {
+        #consent-overlay > div {
+            margin: 1rem;
+            padding: 1.5rem;
+        }
+        
+        #consent-notice {
+            padding: 1rem;
+        }
+
+        #consent-notice span {
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .consent-buttons {
+            flex-direction: column;
+        }
+
+        .btn {
+            width: 100%;
+            margin: 0.25rem 0;
+        }
+
+        #consent-overlay .checkbox-container {
+            padding: 1rem;
+        }
+
+        #consent-overlay input[type="checkbox"] {
+            width: 24px;
+            height: 24px;
+            margin-right: 1.2rem;
+        }
+
+        #consent-overlay input[type="checkbox"]:checked::after {
+            font-size: 16px;
+        }
+    }
+
+    /* 语言显示控制 */
+    [class^="lang-"] {
+        display: none;
+    }
+    .lang-zh {
+        display: inline;
+    }
+
+    /* GDPR禁用提示样式 */
+    .gdpr-disabled-notice {
+        text-align: center;
+        padding: 2rem;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        margin: 2rem 0;
+        background: var(--entry);
+    }
+
+    .gdpr-disabled-notice button {
+        margin-top: 1rem;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+        border: 1px solid var(--border);
+        background: var(--entry);
+        color: var(--primary);
+        transition: all 0.3s ease;
+    }
+
+    .gdpr-disabled-notice button:hover {
+        background: var(--border);
+    }
+</style>
+<div id="consent-notice">
+    <span class="lang-zh">我们希望使用第三方服务来改善网站功能。请选择您的偏好设置。</span>
+    <span class="lang-en">We would like to use third party services to improve website functionality.</span>
+    <span class="lang-ja">ウェブサイトの機能を向上させるため、第三者のサービスを使用させていただきたいと思います。</span>
+    <span class="lang-ko">웹사이트 기능을 개선하기 위해 제3자 서비스를 사용하고자 합니다.</span>
+    <button class="btn manage-consent">
+        <span class="lang-zh">管理设置</span>
+        <span class="lang-en">Manage settings</span>
+        <span class="lang-ja">設定を管理</span>
+        <span class="lang-ko">설정 관리</span>
+    </button>
+    <button class="btn deny-consent">
+        <span class="lang-zh">拒绝</span>
+        <span class="lang-en">Deny</span>
+        <span class="lang-ja">拒否</span>
+        <span class="lang-ko">거부</span>
+    </button>
+    <button class="btn approve-consent">
+        <span class="lang-zh">允许</span>
+        <span class="lang-en">Allow</span>
+        <span class="lang-ja">許可</span>
+        <span class="lang-ko">허용</span>
+    </button>
+</div>
+<div id="consent-overlay">
+    <div>
+        <h3>
+            <span class="lang-zh">隐私设置</span>
+            <span class="lang-en">Privacy Settings</span>
+            <span class="lang-ja">プライバシー設定</span>
+            <span class="lang-ko">개인정보 설정</span>
+        </h3>
+        <br>
+        <div class="consent-options">
+            {{ range $index, $item := .Site.Data.consent.items }}
+                <div class="checkbox-container">
+                    <input type="checkbox" id="item{{ $index }}" value="1" name="item{{ $index }}" {{ if $item.is_functional }}checked disabled{{ end }} />
+                    <label for="item{{ $index }}">
+                        <h3>{{ $item.title }}</h3>
+                        <p>{{ $item.description }}</p>
+                    </label>
+                </div>
+            {{ end }}
+            <div class="consent-buttons">
+                <button id="save-consent" class="btn save-consent" data-consentvalue="{{ range $index, $item := .Site.Data.consent.items }}{{ if $item.is_functional}}{{ else }}0{{ end }}{{ end }}">
+                    <span class="lang-zh">保存设置</span>
+                    <span class="lang-en">Save settings</span>
+                    <span class="lang-ja">設定を保存</span>
+                    <span class="lang-ko">설정 저장</span>
+                </button>
+                <button class="btn approve-consent">
+                    <span class="lang-zh">允许全部</span>
+                    <span class="lang-en">Allow all</span>
+                    <span class="lang-ja">すべて許可</span>
+                    <span class="lang-ko">모두 허용</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 添加GDPR禁用提示模板 -->
+<template id="gdpr-disabled-template">
+    <div class="gdpr-disabled-notice">
+        <div id="gdpr-message"></div>
+        <button onclick="document.querySelector('.manage-consent').click()" id="gdpr-button"></button>
+    </div>
+</template>
+
+<script>
+
+    const scripts = [];{{ range $index, $item := (where .Site.Data.consent.items "is_functional" false) }}
+    scripts[{{ $index }}] = "/js/{{ $item.script_file }}";{{ end }}
+
+    function createCookie(name,value,days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days*24*60*60*1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + value + expires + "; path=/";
+    }
+    function readCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
+    }
+    function eraseCookie(name) {
+        createCookie(name,"",-1);
+    }
+    function denyAllConsentScripts() {
+        var consentValue = "";
+        scripts.forEach(function(){
+            consentValue = consentValue + "0";
+        });
+        acceptSomeConsentScripts(consentValue);
+    }
+    function acceptAllConsentScripts() {
+        var consentValue = "";
+        scripts.forEach(function(){
+            consentValue = consentValue + "1";
+        });
+        acceptSomeConsentScripts(consentValue);
+    }
+    function acceptSomeConsentScripts(consentValue) {
+        setConsentInputs(consentValue);
+        createCookie('consent-settings',consentValue,31);
+        document.getElementById('consent-notice').style.display = 'none';
+        document.getElementById('consent-overlay').classList.remove('active');
+        loadConsentScripts(consentValue);
+    }
+    function loadConsentScripts(consentValue) {
+        scripts.forEach(function(value,key){
+            //console.log('script'+key+' is set to ' +consentValue[key]+' and is file '+value);
+            if(consentValue[key]=="1") {
+                var s = document.createElement('script');
+                s.type = 'text/javascript';
+                s.src = value;
+                document.body.appendChild(s);
+            }
+        });
+    }
+    function setConsentInputs(consentValue) {
+        var elements = document.querySelectorAll('#consent-overlay input:not([disabled])');
+        elements.forEach(function(el,index) {
+            if(consentValue[index]=="1") el.checked = true;
+            else el.checked = false;
+        });
+    }
+    function setConsentValue() {
+        var elements = document.querySelectorAll('#consent-overlay input:not([disabled])');
+        var consentValue = "";
+        elements.forEach(function(el) {
+            if(el.checked) consentValue = consentValue + "1";
+            else consentValue = consentValue + "0";
+        });
+        document.getElementById("save-consent").dataset.consentvalue = consentValue;
+    }
+
+    var elements = document.querySelectorAll('#consent-overlay input:not([disabled])');
+    elements.forEach(function(el) {
+        el.checked = false;
+    });
+
+    if(readCookie('consent-settings')) {
+        var consentValue = readCookie('consent-settings').toString();
+        //console.log(consentValue);
+        setConsentInputs(consentValue);
+        loadConsentScripts(consentValue);
+    } else {
+        document.getElementById('consent-notice').style.display = 'block';
+    }
+    var elements = document.querySelectorAll('.manage-consent');
+    elements.forEach(function(el) {
+        el.addEventListener("click",function() {
+            document.getElementById('consent-overlay').classList.toggle('active');
+        });
+    });
+    var elements = document.querySelectorAll('.deny-consent');
+    elements.forEach(function(el) {
+        el.addEventListener("click",function() {
+            denyAllConsentScripts();
+        });
+    });
+    var elements = document.querySelectorAll('.approve-consent');
+    elements.forEach(function(el) {
+        el.addEventListener("click",function() {
+            acceptAllConsentScripts();
+        });
+    });
+    document.getElementById("save-consent").addEventListener("click",function() {
+        setConsentValue();
+        acceptSomeConsentScripts(this.dataset.consentvalue);
+    });
+    document.getElementById("consent-overlay").addEventListener("click",function(e) {
+        if (!document.querySelector("#consent-overlay > div").contains(e.target)){
+            this.classList.toggle('active');
+        }
+    });
+
+    // 添加语言切换功能
+    function setLanguage(lang) {
+        document.querySelectorAll('[class^="lang-"]').forEach(el => {
+            el.style.display = 'none';
+        });
+        document.querySelectorAll('.lang-' + lang).forEach(el => {
+            el.style.display = 'inline';
+        });
+        createCookie('consent-language', lang, 365);
+    }
+
+    // 检测浏览器语言并设置相应的语言
+    function detectAndSetLanguage() {
+        const savedLang = readCookie('consent-language');
+        if (savedLang) {
+            setLanguage(savedLang);
+            return;
+        }
+
+        const lang = navigator.language.toLowerCase();
+        if (lang.startsWith('zh')) {
+            setLanguage('zh');
+        } else if (lang.startsWith('ja')) {
+            setLanguage('ja');
+        } else if (lang.startsWith('ko')) {
+            setLanguage('ko');
+        } else {
+            setLanguage('en');
+        }
+    }
+
+    // 初始化语言
+    detectAndSetLanguage();
+
+    // 添加GDPR禁用提示功能
+    function showGDPRDisabledNotice(container) {
+        const template = document.getElementById('gdpr-disabled-template');
+        if (template && container) {
+            const clone = template.content.cloneNode(true);
+            const userLang = navigator.language.toLowerCase().split('-')[0];
+            
+            const messages = {
+                'zh': '由于您在GDPR中的设置，评论功能不可用。',
+                'ja': 'GDPRの設定により、コメント機能は無効になっています。',
+                'ko': 'GDPR 설정으로 인해 댓글 기능을 사용할 수 없습니다。',
+                'en': 'Comments are disabled due to your GDPR settings.'
+            };
+            
+            const buttonText = {
+                'zh': '管理隐私设置',
+                'ja': 'プライバシー設定',
+                'ko': '개인정보 설정',
+                'en': 'Privacy Settings'
+            };
+
+            clone.querySelector('#gdpr-message').textContent = messages[userLang] || messages['en'];
+            clone.querySelector('#gdpr-button').textContent = buttonText[userLang] || buttonText['en'];
+            
+            container.innerHTML = '';
+            container.appendChild(clone);
+        }
+    }
+
+    // 初始化时检查所有需要GDPR提示的容器
+    function initGDPRNotices() {
+        const containers = document.querySelectorAll('.giscus-container');
+        const consentSettings = readCookie('consent-settings');
+        
+        containers.forEach(container => {
+            if (!consentSettings || consentSettings[0] === '0') {
+                showGDPRDisabledNotice(container);
+            }
+        });
+    }
+
+    // 添加到现有的初始化流程
+    document.addEventListener('DOMContentLoaded', initGDPRNotices);
+
+</script>
+
+{{ range $index, $item := .Site.Data.consent.items }}
+    {{ if $item.is_functional }}
+        <script type="text/javascript" src="/js/{{ $item.script_file }}"></script>
+    {{ end }}
+{{ end }}
