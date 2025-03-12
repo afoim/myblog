@@ -4,8 +4,6 @@ date: 2024-01-01
 draft: false
 ---
 
-# 关于我们
-
 ## 站点信息
 这是一个由个人维护的技术博客网站。本站使用 [Hugo](https://gohugo.io/) 框架构建，采用 [PaperMod](https://github.com/adityatelange/hugo-PaperMod) 主题，并部署在 [Cloudflare Pages](https://pages.cloudflare.com/) 平台上。
 
