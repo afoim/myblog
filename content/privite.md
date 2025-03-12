@@ -60,4 +60,4 @@ draft: false
 
 ## 7. 联系方式
 如有任何关于隐私或数据保护的问题，请联系：
-- 邮箱：[sudo@onani.cn](mailto:sudo@onani.cn)
+- 邮箱：[sudo@onani.cn](mailto:sudo@onani.cn?关于站点AcoFork Blog隐私/数据保护/相关的建议/投诉)
