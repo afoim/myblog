@@ -1,0 +1,163 @@
+<!-- 图片查看器HTML -->
+<div class="img-viewer-overlay">
+    <div class="img-viewer-container">
+        <img src="" alt="" draggable="false">
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const overlay = document.querySelector('.img-viewer-overlay');
+        const container = overlay.querySelector('.img-viewer-container');
+        const viewerImg = overlay.querySelector('img');
+        let scale = 1;
+        let isDragging = false;
+        let startX, startY, currentX, currentY;
+        let lastX = 0, lastY = 0;
+
+        // 防止图片被拖拽
+        viewerImg.addEventListener('dragstart', function(e) {
+            e.preventDefault();
+        });
+
+        // 防止浏览器默认拖放行为
+        overlay.addEventListener('mousedown', function(e) {
+            e.preventDefault();
+        });
+
+        // 图片查看器初始化
+        document.querySelectorAll('.post-content img').forEach(img => {
+            img.addEventListener('click', function() {
+                viewerImg.src = this.src;
+                overlay.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                scale = 1;
+                currentX = 0;
+                currentY = 0;
+                lastX = 0;
+                lastY = 0;
+                updateTransform();
+            });
+        });
+
+        // 鼠标滚轮缩放
+        overlay.addEventListener('wheel', function(e) {
+            e.preventDefault();
+            const delta = e.deltaY;
+            const scaleChange = delta > 0 ? 0.9 : 1.1;
+            scale *= scaleChange;
+            scale = Math.min(Math.max(0.5, scale), 5); // 限制缩放范围
+            updateTransform();
+        });
+
+        // 触摸缩放
+        let lastTouchDistance = 0;
+        overlay.addEventListener('touchstart', function(e) {
+            if (e.touches.length === 2) {
+                lastTouchDistance = getTouchDistance(e.touches);
+            }
+        });
+
+        overlay.addEventListener('touchmove', function(e) {
+            e.preventDefault();
+            if (e.touches.length === 2) {
+                const currentDistance = getTouchDistance(e.touches);
+                const change = currentDistance / lastTouchDistance;
+                scale *= change;
+                scale = Math.min(Math.max(0.5, scale), 5);
+                lastTouchDistance = currentDistance;
+                updateTransform();
+            }
+        });
+
+        // 拖动功能
+        viewerImg.addEventListener('mousedown', startDragging);
+        document.addEventListener('mousemove', drag);
+        document.addEventListener('mouseup', stopDragging);
+        viewerImg.addEventListener('touchstart', startDragging);
+        document.addEventListener('touchmove', drag);
+        document.addEventListener('touchend', stopDragging);
+
+        // 关闭查看器
+        overlay.addEventListener('click', function(e) {
+            if (e.target === overlay) {
+                closeViewer();
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeViewer();
+            }
+        });
+
+        // 双击重置缩放
+        viewerImg.addEventListener('dblclick', resetImage);
+
+        // 辅助函数
+        function getTouchDistance(touches) {
+            return Math.hypot(
+                touches[0].pageX - touches[1].pageX,
+                touches[0].pageY - touches[1].pageY
+            );
+        }
+
+        function startDragging(e) {
+            isDragging = true;
+            if (e.type === 'mousedown') {
+                startX = e.clientX - lastX;
+                startY = e.clientY - lastY;
+            } else if (e.type === 'touchstart' && e.touches.length === 1) {
+                startX = e.touches[0].clientX - lastX;
+                startY = e.touches[0].clientY - lastY;
+            }
+            viewerImg.style.transition = 'none';
+            viewerImg.classList.add('zoom-enabled');
+        }
+
+        function drag(e) {
+            if (!isDragging) return;
+            e.preventDefault();
+
+            if (e.type === 'mousemove') {
+                currentX = e.clientX - startX;
+                currentY = e.clientY - startY;
+            } else if (e.type === 'touchmove' && e.touches.length === 1) {
+                currentX = e.touches[0].clientX - startX;
+                currentY = e.touches[0].clientY - startY;
+            }
+
+            lastX = currentX;
+            lastY = currentY;
+            
+            requestAnimationFrame(() => {
+                viewerImg.style.transform = `translate(${currentX}px, ${currentY}px) scale(${scale})`;
+            });
+        }
+
+        function stopDragging() {
+            isDragging = false;
+            viewerImg.classList.remove('zoom-enabled');
+            viewerImg.style.transition = 'transform 0.1s ease';
+        }
+
+        function resetImage() {
+            scale = 1;
+            currentX = 0;
+            currentY = 0;
+            lastX = 0;
+            lastY = 0;
+            updateTransform();
+        }
+
+        function updateTransform() {
+            viewerImg.style.transform = `translate(${currentX}px, ${currentY}px) scale(${scale})`;
+        }
+
+        function closeViewer() {
+            overlay.style.display = 'none';
+            document.body.style.overflow = '';
+            resetImage();
+        }
+    });
+</script>
