@@ -18,7 +18,7 @@ draft: false
 - 数字生活体验
 
 ## 联系我们
-- 邮箱：[talk@onani.cn](mailto:talk@onani.cn?subject=[AcoFork%20Blog]%20网站反馈)
+- 邮箱：[sudo@onani.cn](mailto:sudo@onani.cn?subject=[AcoFork%20Blog]%20网站反馈)
 - 如果您发现本站内容存在侵权问题，请立即与我们联系
 - 欢迎通过邮件提供建议或反馈，帮助我们改进网站内容和服务
 
