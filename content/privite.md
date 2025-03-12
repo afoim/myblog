@@ -60,4 +60,4 @@ draft: false
 
 ## 7. 联系方式
 如有任何关于隐私或数据保护的问题，请联系：
-- 邮箱：talk@onani.cn
+- 邮箱：admin@onani.cn
