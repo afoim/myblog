@@ -1,0 +1,7 @@
+
+User-agent: *
+Allow: /
+Disallow:
+
+# Allow all bots to index sitemap
+Sitemap: https://www.onani.cn/sitemap.xml
