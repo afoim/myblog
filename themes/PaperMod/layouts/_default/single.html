@@ -49,23 +49,25 @@
       <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
       {{- end }}
     </ul>
-
-    <!-- 添加许可协议 -->
-    {{ partial "post-license.html" . }}
-
-    {{- if (.Param "ShowPostNavLinks") }}
-    {{- partial "post_nav_links.html" . }}
-    {{- end }}
-    {{- if (and site.Params.ShowShareButtons (ne .Params.disableShare true)) }}
-    {{- partial "share_icons.html" . -}}
-    {{- end }}
   </footer>
 
   {{- if (.Param "comments") }}
-  <!-- 预先创建评论容器 -->
-  <div class="giscus-container" style="margin-top: 2rem; width: 100%; max-width: var(--post-width, 720px);">
-    <!-- GDPR提示会由consent.html动态插入 -->
-  </div>
+  <!-- Giscus 评论区 -->
+  <script src="https://giscus.app/client.js"
+  data-repo="afoim/myblog"
+  data-repo-id="R_kgDOOB-WEw"
+  data-category="Announcements"
+  data-category-id="DIC_kwDOOB-WE84CnfcQ"
+  data-mapping="pathname"
+  data-strict="0"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="bottom"
+  data-theme="preferred_color_scheme"
+  data-lang="zh-CN"
+  crossorigin="anonymous"
+  async>
+</script>
   {{- end }}
 </article>
 

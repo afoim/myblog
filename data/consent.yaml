@@ -1,5 +1,0 @@
-items:
-  - title: Giscus评论系统
-    description: 由GitHub提供的评论系统，用于实现文章评论功能。启用后您的评论将存储在GitHub上。
-    is_functional: false
-    script_file: giscus.js

@@ -110,12 +110,8 @@ menu:
       weight: 40
     - identifier: about
       name: 关于我们
-      url: /about/
+      url: https://link.me/acofork
       weight: 45
-    - identifier: private
-      name: 隐私政策
-      url: /privite/
-      weight: 50
     # 可以添加更多导航链接
 
 # 如果要启用搜索功能，需要添加这个
