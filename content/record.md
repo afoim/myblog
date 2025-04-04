@@ -23,6 +23,7 @@ pip install keyboard pyperclip pillow boto3 pyautogui
 ```
 
 # ShellClash
+
 > 用于在Linux上使用CLI来进行正向代理。通过导入标准的Clash `config.yaml` 来实现
 
 https://github.com/juewuy/ShellCrash
@@ -32,6 +33,7 @@ Tg通知频道：https://t.me/ShellClash
 ```shell
 bash -c "$(curl -kfsSl https://raw-githubusercontent-com.acofork.us.kg/juewuy/ShellClash/master/install.sh)" && source /etc/profile &> /dev/null
 ```
+
 打开CLI：clash、crash
 导入配置文件：6-2
 安装本地Web面板：9-4-1
@@ -138,7 +140,7 @@ https://github.com/yumusb/nezha-new
    - 创建证书：`openssl x509 -req -in hy2.csr -signkey hy2.key -out hy2.crt -days 9999`
 
 3. `config.yaml`：
-   
+
 ```yaml
 listen: :443 
 
@@ -155,13 +157,14 @@ masquerade:
   proxy:
     url: https://news.ycombinator.com/ 
     rewriteHost: true
-
 ```
+
 4. 启动 Hysteria2参数：`server`
 5. V2Ray客户端连接直链：
-```shell
-hysteria2://0721@10.147.17.1:443?sni=bing.com&insecure=1#家里云
-```
+   
+   ```shell
+   hysteria2://0721@10.147.17.1:443?sni=bing.com&insecure=1#家里云
+   ```
 
 ---
 
@@ -248,6 +251,7 @@ auth.token = "0721"
 https://gofrp.org/zh-cn/docs/setup/systemd/
 
 # Linux Deb系安装Speedtest-cli
+
 ```shell
 apt install -y lsb-release ca-certificates apt-transport-https curl gnupg dpkg
 curl -sSL https://packagecloud.io/ookla/speedtest-cli/gpgkey | gpg --dearmor > /usr/share/keyrings/speedtest.gpg
@@ -282,7 +286,7 @@ apt install s-tui
 
 # 国内Linux镜像注意事项
 
-1. USTC（中科大源）经常会用JavaScript进行客户端验证，会导致wget和curl命令无法正确下载到文件。建议使用TUNA（清华源）
+1. ~~USTC（中科大源）经常会用JavaScript进行客户端验证，会导致wget和curl命令无法正确下载到文件~~[绕过USTC的浏览器JS验证 | AcoFork Blog](https://www.onani.cn/posts/bypass-ustc-verifying/)。建议使用TUNA（清华源）
 
 ---
 
