@@ -26,6 +26,12 @@ bash -c "$(curl -kfsSl https://raw-githubusercontent-com.acofork.us.kg/juewuy/Sh
 
 ---
 
+# 关于我的超链接
+
+```html
+<a href="https://link.me/acofork" target="_blank">关于我</a>
+```
+
 # r2.py所需依赖
 
 ```shell
