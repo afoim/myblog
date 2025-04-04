@@ -11,11 +11,19 @@ lang: ''
 
 ---
 
- 
-
 # 引言
 
-曾经我写过一篇文章叫做：[Fuwari静态博客搭建教程](/posts/fuwari/)。文中的[Fuwari](https://github.com/saicaca/fuwari)是基于Astro的，并且使用了服务器+客户端的混合渲染，尽管UI确实好看，但因为本人不会写Astro导致日后维护特别困难（比如手动添加Giscus评论后和上游分支发生冲突需要手动解决冲突才能合并上游）。最后我放弃了，既然我就是菜我为什么不找一个原生使用HTML+JS+CSS的框架呢？于是我便询问AI，Claude推荐我使用Hugo。其实我早就曾听闻Hugo的大名，但是并没有深入研究，但是Claude又告诉我Hugo采用Go语言进行编译，速度快，而且想要二次开发也只需要改改我最熟悉的HTML+JS+CSS。于是我便花了2小时深入研究、部署、调优。发现Hugo确实很强大：迁移方便，二改简单，构建迅速
+曾经我写过一篇文章叫做：[Fuwari静态博客搭建教程](/posts/fuwari/)。
+
+文中的[Fuwari](https://github.com/saicaca/fuwari)是基于Astro的，并且使用了服务器+客户端的混合渲染，尽管UI确实好看，但因为本人不会写Astro导致日后维护特别困难（比如手动添加Giscus评论后和上游分支发生冲突需要手动解决冲突才能合并上游）。
+
+最后我放弃了，既然我就是菜我为什么不找一个原生使用HTML+JS+CSS的框架呢？
+
+于是我便询问AI，Claude推荐我使用Hugo。
+
+其实我早就曾听闻Hugo的大名，但是并没有深入研究，但是Claude又告诉我Hugo采用Go语言进行编译，速度快，而且想要二次开发也只需要改改我最熟悉的HTML+JS+CSS。
+
+于是我便花了2小时深入研究、部署、调优。发现Hugo确实很强大：迁移方便，二改简单，构建迅速
 
 # 正式开始
 
@@ -234,6 +242,7 @@ hugo server
 ---
 
 ### 对象存储存图中间件代码：
+
 ```python
 import keyboard
 import pyperclip
@@ -292,7 +301,7 @@ def get_image_from_clipboard():
         image = ImageGrab.grabclipboard()
         if image is None:
             return None
-            
+
         # 如果是列表（多个文件），取第一个
         if isinstance(image, list):
             if len(image) > 0:
@@ -303,11 +312,11 @@ def get_image_from_clipboard():
                     print(f"打开图片文件失败: {e}")
                     return None
             return None
-            
+
         # 如果直接是 Image 对象
         if isinstance(image, Image.Image):
             return image
-            
+
         return None
     except Exception as e:
         print(f"获取剪贴板图片失败: {e}")
@@ -317,7 +326,7 @@ def convert_to_webp(image):
     """将图片转换为 webp 格式"""
     if not image:
         return None
-    
+
     try:
         buffer = BytesIO()
         # 确保图片是 RGB 模式
@@ -327,7 +336,7 @@ def convert_to_webp(image):
             image = background
         elif image.mode != 'RGB':
             image = image.convert('RGB')
-            
+
         image.save(buffer, format="WEBP", quality=80)
         return buffer.getvalue()
     except Exception as e:
@@ -340,11 +349,11 @@ def upload_to_r2(image_data):
         return None
 
     client = init_r2_client()
-    
+
     # 生成基础文件名
     base_filename = f"{uuid.uuid4()}.webp"
     filename = base_filename
-    
+
     try:
         # 检查文件是否已存在
         attempt = 1
@@ -365,7 +374,7 @@ def upload_to_r2(image_data):
                 if e.response['Error']['Code'] == '404':
                     break
                 raise e  # 其他错误则抛出
-                
+
         # 上传文件
         client.put_object(
             Bucket=R2_CONFIG['bucket_name'],
@@ -382,7 +391,7 @@ def generate_markdown_link(filename):
     """生成 Markdown 图片链接"""
     if not filename:
         return None
-    
+
     url = f"https://{OSS_CONFIG['url']}{OSS_CONFIG['prefix']}/{filename}"
     return f"![]({url})"
 
@@ -390,14 +399,14 @@ def type_markdown_link(markdown_link):
     """模拟键盘输入 Markdown 链接"""
     if not markdown_link:
         return
-    
+
     pyperclip.copy(markdown_link)
     pyautogui.hotkey('ctrl', 'v')
 
 def handle_upload():
     """处理图片上传的主函数"""
     print(f"\n[{time.strftime('%Y-%m-%d %H:%M:%S')}] 收到粘贴请求")
-    
+
     print("正在检查剪贴板...")
     # 获取剪贴板图片
     image = get_image_from_clipboard()
@@ -440,10 +449,10 @@ def main():
     print(f"- R2 存储桶: {R2_CONFIG['bucket_name']}")
     print("使用 Ctrl+Alt+V 上传剪贴板中的图片")
     print("=" * 50)
-    
+
     # 注册快捷键
     keyboard.add_hotkey('ctrl+alt+v', handle_upload)
-    
+
     # 保持程序运行
     keyboard.wait()
 
