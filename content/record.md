@@ -9,6 +9,19 @@ categories: '记录'
 draft: false 
 lang: 'zh_CN'
 ---
+
+# 关于我的超链接
+
+```html
+<a href="https://link.me/acofork" target="_blank">关于我</a>
+```
+
+# r2.py所需依赖
+
+```shell
+pip install keyboard pyperclip pillow boto3 pyautogui
+```
+
 # ShellClash
 > 用于在Linux上使用CLI来进行正向代理。通过导入标准的Clash `config.yaml` 来实现
 
@@ -23,20 +36,6 @@ bash -c "$(curl -kfsSl https://raw-githubusercontent-com.acofork.us.kg/juewuy/Sh
 导入配置文件：6-2
 安装本地Web面板：9-4-1
 开机自启：4-1
-
----
-
-# 关于我的超链接
-
-```html
-<a href="https://link.me/acofork" target="_blank">关于我</a>
-```
-
-# r2.py所需依赖
-
-```shell
-pip install keyboard pyperclip pillow boto3 pyautogui
-```
 
 # Vless通用配置（不加密）
 
@@ -140,9 +139,8 @@ https://github.com/yumusb/nezha-new
 
 3. `config.yaml`：
    
-   ```yaml
-   listen: :443 
-   ```
+```yaml
+listen: :443 
 
 tls:
   cert: hy2.crt 
@@ -247,34 +245,7 @@ auth.token = "0721"
 
 ### FRP systemd服务配置（开机自启）
 
-- 创建 frps.service 文件
-  
-  ```shell
-  sudo nano /etc/systemd/system/frps.service
-  ```
-
-- copy 以下内容到文件中
-  
-  ```shell
-  [Unit]
-  # 服务名称，可自定义
-  Description = frp server
-  After = network.target syslog.target
-  Wants = network.target
-  ```
-
-[Service]
-Type = simple
-
-# 启动frps的命令，需修改为您的frps的安装路径
-
-ExecStart = /path/to/frps -c /path/to/frps.toml
-
-[Install]
-WantedBy = multi-user.target
-
-```
----
+https://gofrp.org/zh-cn/docs/setup/systemd/
 
 # Linux Deb系安装Speedtest-cli
 ```shell
