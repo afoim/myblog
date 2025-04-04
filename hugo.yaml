@@ -109,7 +109,7 @@ menu:
       url: /search/
       weight: 40
     - identifier: about
-      name: 关于我们
+      name: 关于我
       url: https://link.me/acofork
       weight: 45
     # 可以添加更多导航链接
