@@ -98,14 +98,9 @@
     document.querySelectorAll('pre > code').forEach((codeblock) => {
         const container = codeblock.parentNode.parentNode;
         
-        // 创建顶部按钮容器
-        const topButtons = document.createElement('div');
-        topButtons.classList.add('code-buttons');
-
-        // 创建底部按钮容器
-        const bottomButtons = document.createElement('div');
-        bottomButtons.classList.add('code-buttons', 'bottom-buttons');
-        bottomButtons.style.display = 'none';
+        // 创建按钮容器
+        const buttons = document.createElement('div');
+        buttons.classList.add('code-buttons');
 
         // 创建复制按钮函数
         const createCopyButton = () => {
@@ -156,42 +151,30 @@
                     codeblock.style.maxHeight = null;
                     codeblock.style.overflow = 'visible';
                     toggleButton.innerHTML = '收起';
-                    bottomButtons.style.display = 'flex';
                 } else {
                     codeblock.style.maxHeight = '250px';
                     codeblock.style.overflow = 'hidden';
                     toggleButton.innerHTML = '展开';
-                    bottomButtons.style.display = 'none';
                 }
             };
             
             toggleButton.addEventListener('click', toggleCodeBlock);
-            
-            // 添加顶部按钮
-            topButtons.appendChild(createCopyButton());
-            topButtons.appendChild(toggleButton);
-            
-            // 添加底部按钮
-            const bottomToggleBtn = toggleButton.cloneNode(true);
-            bottomToggleBtn.addEventListener('click', toggleCodeBlock);
-            bottomButtons.appendChild(createCopyButton());
-            bottomButtons.appendChild(bottomToggleBtn);
+            buttons.appendChild(createCopyButton());
+            buttons.appendChild(toggleButton);
             
             // 默认折叠
             codeblock.style.maxHeight = '250px';
             codeblock.style.overflow = 'hidden';
         } else {
             // 只添加复制按钮
-            topButtons.appendChild(createCopyButton());
+            buttons.appendChild(createCopyButton());
         }
 
         // 添加按钮到容器
         if (container.classList.contains("highlight")) {
-            container.appendChild(topButtons);
-            container.appendChild(bottomButtons);
+            container.appendChild(buttons);
         } else {
-            codeblock.parentNode.appendChild(topButtons);
-            codeblock.parentNode.appendChild(bottomButtons);
+            codeblock.parentNode.appendChild(buttons);
         }
     });
 </script>

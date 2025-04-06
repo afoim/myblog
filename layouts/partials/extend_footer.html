@@ -161,3 +161,293 @@
         }
     });
 </script>
+
+<div class="main-content" align="center">
+    <style>
+        .shields {
+            display: flex;
+            flex-wrap: wrap;  /* 启用换行 */
+            justify-content: center;
+            align-items: center;
+            gap: 8px;  /* 减小间距使更紧凑 */
+            margin: 20px auto;  /* 居中对齐 */
+            padding: 0 10px;  /* 添加两侧内边距 */
+            max-width: 100%;  /* 确保不超出视窗 */
+            box-sizing: border-box;  /* 防止padding导致溢出 */
+        }
+        .shields img {
+            height: 20px;
+            max-width: 100%;  /* 确保图片不会溢出容器 */
+            object-fit: contain;  /* 保持图片比例 */
+        }
+    </style>
+
+    <div class="shields">
+        <img alt="Static Badge" src="https://img.shields.io/badge/Vercel-black?logo=vercel">
+      <img alt="Static Badge" src="https://img.shields.io/badge/MarkDown-black?logo=markdown">
+<img alt="Static Badge" src="https://img.shields.io/badge/JavaScript-black?logo=javascript">
+<img alt="Static Badge" src="https://img.shields.io/badge/HTML%205-black?logo=html5">
+
+
+      
+            <img alt="Static Badge" src="https://img.shields.io/badge/AI-Enhanced-black?logo=openai">
+<img alt="Static Badge" src="https://img.shields.io/badge/Umami-Analytics-white?logo=umami">
+
+      <img alt="Static Badge" src="https://img.shields.io/badge/Cloudflare_R2-IMG-yellow?logo=cloudflare">
+<img alt="Static Badge" src="https://img.shields.io/badge/QQ-Favicon-blue?logo=qq">
+
+        <img alt="Static Badge" src="https://img.shields.io/badge/HTTPS-Support-green">
+        <img alt="Static Badge" src="https://img.shields.io/badge/IPv6-Support-green">
+        <img alt="Static Badge" src="https://img.shields.io/badge/QUIC-Support-green">
+      <img alt="Static Badge" src="https://img.shields.io/badge/ECH-Support-green">
+
+    </div>
+
+    <div class="log-container">
+        <div class="log-item" id="ipv4">IPv4：加载中...</div>
+        <div class="log-item" id="ipv6">IPv6：加载中...</div>
+        <div class="log-item" id="webrtc">WebRTC状态：检测中...</div>
+        <div class="log-item" id="ua">浏览器UA：</div>
+        <div class="log-item" id="latency">链接延迟：测试中...</div>
+        <div class="log-item" id="os">操作系统：检测中...</div>
+        <div class="log-item" id="env">运行环境：检测中...</div>
+        <div class="log-item" id="visit-count">访问统计：加载中...</div>
+        <div class="log-item">
+            <a class="benchmark-link" onclick="startBenchmark()" id="benchmarkBtn">开始跑分</a>
+            <span id="benchmarkResult"></span>
+        </div>
+    </div>
+</div>
+
+<script>
+    async function getIpInfo(url) {
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+            return `${data.ip} (${decodeURIComponent(data.address)})`;
+        } catch (error) {
+            return '获取失败';
+        }
+    }
+
+    async function testLatency() {
+        const url = 'https://www.onani.cn';
+        const startTime = performance.now();
+        try {
+            const response = await fetch(url, { mode: 'no-cors' });
+            const endTime = performance.now();
+            const latency = Math.round(endTime - startTime);
+            document.getElementById('latency').textContent = `链接延迟：${latency}ms`;
+        } catch (error) {
+            document.getElementById('latency').textContent = '链接延迟：测试失败';
+        }
+    }
+
+    function detectOS() {
+        const ua = navigator.userAgent;
+        let os = "未知";
+        
+        if (/(Windows)/i.test(ua)) {
+            os = "Windows";
+        } else if (/(iPhone|iPad|iPod)/i.test(ua)) {
+            os = "iOS";
+        } else if (/(Android)/i.test(ua)) {
+            os = "Android";
+        } else if (/(Mac OS X)/i.test(ua)) {
+            os = "MacOS";
+        } else if (/(Linux)/i.test(ua)) {
+            os = "Linux";
+        }
+        
+        document.getElementById('os').textContent = `操作系统：${os}`;
+    }
+
+    function detectEnv() {
+        const ua = navigator.userAgent.toLowerCase();
+        const envDiv = document.getElementById('env');
+        
+        // 检测是否是移动设备
+        const isMobile = /mobile|android|iphone|ipad|ipod|windows phone/i.test(ua);
+        
+        // 检测具体的浏览器环境
+        let env = "桌面端 - ";
+        if (isMobile) {
+            env = "移动端 - ";
+        }
+        
+        if (/micromessenger/i.test(ua)) {
+            env += "微信浏览器";
+        } else if (/edg/i.test(ua)) {
+            env += "Edge浏览器";
+        } else if (/firefox/i.test(ua)) {
+            env += "Firefox浏览器";
+        } else if (/chrome/i.test(ua)) {
+            env += "Chrome浏览器";
+        } else if (/safari/i.test(ua)) {
+            env += "Safari浏览器";
+        } else {
+            env += "其他浏览器";
+        }
+        
+        envDiv.textContent = `运行环境：${env}`;
+    }
+
+    async function getIPLocation(ip) {
+        try {
+            const response = await fetch(`https://api.ip.sb/geoip/${ip}`);
+            const data = await response.json();
+            if (data.country) {
+                const location = [
+                    data.country,
+                    data.region || data.city,
+                    data.organization ? `(${data.organization})` : ''
+                ].filter(Boolean).join(' ');
+                return location;
+            }
+            return '未知位置';
+        } catch (error) {
+            return '查询失败';
+        }
+    }
+
+    async function checkWebRTC() {
+        const webrtcDiv = document.getElementById('webrtc');
+        try {
+            const pc = new RTCPeerConnection({
+                iceServers: [{ urls: 'stun:stun.l.google.com:19302' }]
+            });
+
+            pc.createDataChannel('');
+            const offer = await pc.createOffer();
+            await pc.setLocalDescription(offer);
+
+            let webrtcIPs = new Map(); // 使用Map存储IP和位置信息
+            
+            pc.onicecandidate = async (e) => {
+                if (!e.candidate) return;
+                
+                const ipMatch = /([0-9]{1,3}(\.[0-9]{1,3}){3}|[a-f0-9]{1,4}(:[a-f0-9]{1,4}){7})/i
+                    .exec(e.candidate.candidate);
+                
+                if (ipMatch && ipMatch[1]) {
+                    const ip = ipMatch[1];
+                    if (!webrtcIPs.has(ip)) {
+                        webrtcDiv.textContent = 'WebRTC状态：正在查询IP位置...';
+                        const location = await getIPLocation(ip);
+                        webrtcIPs.set(ip, location);
+                        
+                        // 检查是否与远程IP一致
+                        const remoteIP = document.getElementById('ipv4').textContent
+                            .split('(')[0].trim().replace('IPv4：', '');
+                        
+                        if (ip === remoteIP) {
+                            webrtcDiv.textContent = 'WebRTC状态：未泄露';
+                        } else {
+                            const ipsInfo = Array.from(webrtcIPs.entries())
+                                .map(([ip, loc]) => `${ip} [${loc}]`)
+                                .join('\n');
+                            webrtcDiv.innerHTML = `WebRTC状态：IP泄露<br>${ipsInfo}`;
+                        }
+                    }
+                }
+            };
+
+            setTimeout(() => {
+                pc.close();
+                if (webrtcDiv.textContent === 'WebRTC状态：检测中...') {
+                    webrtcDiv.textContent = 'WebRTC状态：未检测到';
+                }
+            }, 5000);
+
+        } catch (error) {
+            webrtcDiv.textContent = 'WebRTC状态：检测失败';
+        }
+    }
+
+    async function startBenchmark() {
+        const btn = document.getElementById('benchmarkBtn');
+        const result = document.getElementById('benchmarkResult');
+        btn.style.display = 'none';
+        btn.textContent = "开始跑分";
+        result.textContent = "（？？分）";
+        
+        // 计算圆周率的函数
+        function calculatePi(iterations) {
+            let pi = 0;
+            for(let i = 0; i < iterations; i++) {
+                pi += Math.pow(-1, i) / (2 * i + 1);
+            }
+            return 4 * pi;
+        }
+
+        // 预热
+        calculatePi(10000);
+        
+        let iterations = 0;
+        let pi = 0;
+        const startTime = performance.now();
+        const duration = 5000; // 5秒测试
+
+        while (performance.now() - startTime < duration) {
+            pi = calculatePi(10000);
+            iterations += 10000;
+            
+            // 每100ms更新一次显示
+            if (iterations % 100000 === 0) {
+                const remainingTime = Math.ceil((duration - (performance.now() - startTime)) / 1000);
+                result.textContent = `正在跑分（还剩${remainingTime}s）`;
+                // 让UI有机会更新
+                await new Promise(resolve => setTimeout(resolve, 0));
+            }
+        }
+
+        const finalScore = Math.round(iterations / 10000);
+
+        result.textContent = `（${finalScore}分）`;
+        btn.style.display = 'inline';
+    }
+
+    function updateVisitCount() {
+        const visitCountDiv = document.getElementById('visit-count');
+        let count = parseInt(localStorage.getItem('visitCount') || '0');
+        count++;
+        localStorage.setItem('visitCount', count.toString());
+        
+        // 获取首次访问时间
+        let firstVisit = localStorage.getItem('firstVisitTime');
+        if (!firstVisit) {
+            firstVisit = new Date().toISOString();
+            localStorage.setItem('firstVisitTime', firstVisit);
+        }
+        
+        visitCountDiv.textContent = `访问统计：第 ${count} 次访问，首次访问时间：${new Date(firstVisit).toLocaleString()}`;
+    }
+
+    async function initLog() {
+        updateVisitCount();
+        // 获取IPv4信息
+        const ipv4Info = await getIpInfo('https://ipv4_ct.itdog.cn/');
+        document.getElementById('ipv4').textContent = `IPv4：${ipv4Info}`;
+
+        // 获取IPv6信息
+        const ipv6Info = await getIpInfo('https://ipv6_ct.itdog.cn/');
+        document.getElementById('ipv6').textContent = `IPv6：${ipv6Info}`;
+
+        // 获取UA信息
+        const ua = navigator.userAgent;
+        document.getElementById('ua').textContent = `浏览器UA：${ua}`;
+
+        // 测试延迟
+        testLatency();
+
+        // 检测操作系统
+        detectOS();
+
+        // 检测运行环境
+        detectEnv();
+
+        // 检测WebRTC
+        checkWebRTC();
+    }
+    window.onload = initLog;
+</script>

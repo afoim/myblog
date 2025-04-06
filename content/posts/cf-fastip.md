@@ -3,7 +3,7 @@ title: 试试Cloudflare IP优选！让Cloudflare在国内再也不是减速器�
 published: 2024-10-14
 summary: "使用SaaS双域名来让你的网站解析的IP进行分流优选，提高网站可用性和速度"
 cover:
-  image: "https://oss.onani.cn/fuwari-blog/img/QmePpCr1YsDEBjm5f4TWc5FiEJtQp9ppzHqAuMTvvzEmyz.webp"
+  image: "https://r2.2x.nz/fuwari-blog/img/QmePpCr1YsDEBjm5f4TWc5FiEJtQp9ppzHqAuMTvvzEmyz.webp"
 tags: [Cloudflare SaaS]
 categories: '教程'
 draft: false 
@@ -12,11 +12,11 @@ lang: ''
 
 #### 未优选
 
-![QmZoinxZgAzu7Skh7BqsxmDQGU1sXtLLskJcyQuRAQNKww.webp](https://oss.onani.cn/fuwari-blog/img/098f9ee71ae62603022e542878673e19bdcaf196.webp)
+![QmZoinxZgAzu7Skh7BqsxmDQGU1sXtLLskJcyQuRAQNKww.webp](https://r2.2x.nz/fuwari-blog/img/098f9ee71ae62603022e542878673e19bdcaf196.webp)
 
 #### 已优选
 
-![QmaNVwAwSRvqdL5SrvWVCGCQqmacP3d62yoLxofGscNoKq.webp](https://oss.onani.cn/fuwari-blog/img/e98ce10d846475aaec5cf73546d9b5caffefc4c0.webp)
+![QmaNVwAwSRvqdL5SrvWVCGCQqmacP3d62yoLxofGscNoKq.webp](https://r2.2x.nz/fuwari-blog/img/e98ce10d846475aaec5cf73546d9b5caffefc4c0.webp)
 
 ---
 
@@ -32,16 +32,16 @@ lang: ''
 ---
 
 1. 首先新建一个DNS解析，指向你的**源站**，**开启cf代理**
-   ![QmfBKgDe77SpkUpjGdmsxqwU2UabvrDAw4c3bgFiWkZCna.webp](https://oss.onani.cn/fuwari-blog/img/c94c34ee262fb51fb5697226ae0df2d804bf76fe.webp)
+   ![QmfBKgDe77SpkUpjGdmsxqwU2UabvrDAw4c3bgFiWkZCna.webp](https://r2.2x.nz/fuwari-blog/img/c94c34ee262fb51fb5697226ae0df2d804bf76fe.webp)
 
 2. 前往 SSL/TLS -> 自定义主机名。设置回退源为你刚才的DNS解析的域名（xlog.acofork.cn），添加自定义主机名为你最终想让用户访问的域名（onani.cn）并且按照指示在主力域名（onani.cn）添加TXT所有权验证和TXT证书验证，直到证书状态和主机名状态都变为有效
-   ![QmRYrwjeDMDQCj8G9RYkpjC3X4vpwE77wpNpbqKURwBber.webp](https://oss.onani.cn/fuwari-blog/img/f6170f009c43f7c6bee4c2d29e2db7498fa1d0dc.webp)
+   ![QmRYrwjeDMDQCj8G9RYkpjC3X4vpwE77wpNpbqKURwBber.webp](https://r2.2x.nz/fuwari-blog/img/f6170f009c43f7c6bee4c2d29e2db7498fa1d0dc.webp)
 
 3. 继续在你的辅助域名添加一条解析。CNAME到优选节点：cloudflare.182682.xyz，**不开启cf代理**
-   ![QmNwkMqDEkCGMu5jsgE6fj6qpupiqMrqqQtWeAmAJNJbC4.webp](https://oss.onani.cn/fuwari-blog/img/4f9f727b0490e0b33d360a2363c1026003060b29.webp)
+   ![QmNwkMqDEkCGMu5jsgE6fj6qpupiqMrqqQtWeAmAJNJbC4.webp](https://r2.2x.nz/fuwari-blog/img/4f9f727b0490e0b33d360a2363c1026003060b29.webp)
 
 4. 最后在你的主力域名添加解析。域名为之前在辅助域名的自定义主机名（onani.cn），目标为刚才的cdn.acofork.cn，**不开启cf代理**
-   ![QmeK3AZghae4J4LcJdbPMxBcmoNEeF3hXNBmtJaDki8HYt.webp](https://oss.onani.cn/fuwari-blog/img/6f51cb2a42140a9bf364f88a5715291be616a254.webp)
+   ![QmeK3AZghae4J4LcJdbPMxBcmoNEeF3hXNBmtJaDki8HYt.webp](https://r2.2x.nz/fuwari-blog/img/6f51cb2a42140a9bf364f88a5715291be616a254.webp)
 
 5. 优选完毕，尝试访问
 

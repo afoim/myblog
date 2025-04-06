@@ -42,25 +42,40 @@ code {
     direction: ltr;
 }
 
+/* 代码块容器 */
 div.highlight,
 pre {
     position: relative;
     transition: max-height 0.3s ease-out;
 }
 
+/* 确保代码块内容可以水平滚动 */
+pre {
+    overflow-x: auto;
+}
+
+pre code {
+    display: block;
+    min-width: 100%;
+    width: max-content; /* 确保内容可以完整显示 */
+    padding-top: 2.5em !important; /* 将padding移到code元素上 */
+}
+
 /* 代码块按钮容器 */
 .code-buttons {
     position: absolute;
     right: 4px;
+    top: 4px; /* 调整按钮位置 */
     padding: 4px;
     display: flex;
     gap: 6px;
     z-index: 1;
+    background: inherit; /* 继承代码块的背景色 */
 }
 
 /* 顶部按钮位置 */
 .code-buttons {
-    top: 4px;
+    top: 0;
 }
 
 /* 底部按钮位置 */

@@ -3,7 +3,7 @@ title: 使用NoneBot2搭建你的QQBot！
 published: 2024-11-20
 summary: "使用NapCat连接NoneBot2，打造自己的聊天机器人"
 cover:
-  image: "https://oss.onani.cn/fuwari-blog/img/QmcMSSKysZmgUCUk9W7hQUvZCtVSFH6hGKHctg99yo1yDE.webp"
+  image: "https://r2.2x.nz/fuwari-blog/img/QmcMSSKysZmgUCUk9W7hQUvZCtVSFH6hGKHctg99yo1yDE.webp"
 tags: [QQBot]
 categories: '教程'
 draft: false 
@@ -22,7 +22,7 @@ lang: 'zh_CN'
 
 4. 它会打印本地控制台的地址信息，如：`[NapCat] [WebUi] WebUi Local Panel Url: http://127.0.0.1:6099/webui?token=4xldg5fqb1`
 
-5. 直接进入，如图配置即可（端口号可以自己修改，但是要和下部分NoneBot2监听的端口一致。这里是9090）![](https://oss.onani.cn/fuwari-blog/img/2024-11-20-19-21-21-2024-11-20-19-15-39-image.webp)
+5. 直接进入，如图配置即可（端口号可以自己修改，但是要和下部分NoneBot2监听的端口一致。这里是9090）![](https://r2.2x.nz/fuwari-blog/img/2024-11-20-19-21-21-2024-11-20-19-15-39-image.webp)
 
 # 安装 NoneBot2
 
