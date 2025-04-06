@@ -1,5 +1,5 @@
 baseURL: "https://www.onani.cn"
-title: "AcoFork Blog"
+title: "2x . Net Zone"
 defaultContentLanguage: "zh-cn"  # 替换原来的 LanguageCode
 theme: "PaperMod"
 
@@ -71,7 +71,7 @@ params:
   
   # 网站头像设置 (显示在导航栏)
   label:
-    text: "AcoFork Blog"
+    text: "2x . Net Zone"
     # icon: "/images/Miyako.jpg" # 这将显示在导航栏标题旁边
     iconHeight: 35
 

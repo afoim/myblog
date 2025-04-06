@@ -286,7 +286,7 @@ apt install s-tui
 
 # 国内Linux镜像注意事项
 
-1. ~~USTC（中科大源）经常会用JavaScript进行客户端验证，会导致wget和curl命令无法正确下载到文件~~[绕过USTC的浏览器JS验证 | AcoFork Blog](https://www.onani.cn/posts/bypass-ustc-verifying/)。建议使用TUNA（清华源）
+1. ~~USTC（中科大源）经常会用JavaScript进行客户端验证，会导致wget和curl命令无法正确下载到文件~~[绕过USTC的浏览器JS验证 | 2x . Net Zone](https://www.onani.cn/posts/bypass-ustc-verifying/)。建议使用TUNA（清华源）
 
 ---
 
