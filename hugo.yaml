@@ -1,5 +1,5 @@
 baseURL: "https://2x.nz"
-title: "2x . Net Zone"
+title: "AcoFork Blog"
 defaultContentLanguage: "zh-cn"  # 替换原来的 LanguageCode
 theme: "PaperMod"
 
@@ -71,7 +71,7 @@ params:
   
   # 网站头像设置 (显示在导航栏)
   label:
-    text: "2x . Net Zone"
+    text: "AcoFork Blog"
     # icon: "/images/Miyako.jpg" # 这将显示在导航栏标题旁边
     iconHeight: 35
 

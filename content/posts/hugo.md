@@ -3,7 +3,7 @@ title: Hugo博客搭建教程以及配置调优
 published: 2025-03-03T15:56:57+08:00
 summary: "Hugo是一个基于Golang的静态博客，相比于Nodejs的Hexo构建效率提升600%，同时也支持低JavaScript特性，SEO更加优化，爬虫更易获取"
 cover:
-  image: "https://r2.2x.nz/fuwari-blog/img/3d1b097d-7e31-4312-b3e5-d213e2903f4d.webp"
+  image: "https://cloudflare-r2-youkisiaiyixitielu.acofork.dpdns.org/fuwari-blog/img/3d1b097d-7e31-4312-b3e5-d213e2903f4d.webp"
 tags: [Hugo]
 categories: '教程'
 draft: false 
@@ -266,7 +266,7 @@ from io import BytesIO
 
 # # OSS 配置
 # OSS_CONFIG = {
-#     'url': 'r2.2x.nz',
+#     'url': 'cloudflare-r2-youkisiaiyixitielu.acofork.dpdns.org',
 #     'prefix': '/fuwari-blog/img'
 # }
 #########################################################

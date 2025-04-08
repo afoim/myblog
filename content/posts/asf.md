@@ -3,7 +3,7 @@ title: 使用ArchiSteamFarm进行Steam自动挂卡
 published: 2024-12-18
 summary: "ArchiSteamFarm是一个Steam自动挂卡工具，它可以自动识别哪些游戏没有挂卡并且自动挂卡，高效率获得Steam集换式卡牌"
 cover:
-  image: "https://r2.2x.nz/fuwari-blog/img/QmPEHve8DdVZdwxAZ26BPgbc6cDCBaKC76VVijqVoMBY2k"
+  image: "https://cloudflare-r2-youkisiaiyixitielu.acofork.dpdns.org/fuwari-blog/img/QmPEHve8DdVZdwxAZ26BPgbc6cDCBaKC76VVijqVoMBY2k"
 tags: [Steam]
 categories: '教程'
 draft: false 
@@ -30,12 +30,12 @@ https://github.com/JustArchiNET/ArchiSteamFarm
 
 添加机器人，简单配置即可
 
-![image](https://r2.2x.nz/fuwari-blog/img/QmcoF7K5sTkd4CRGTZPmnLwheAHpSf68RkZTd4ZST41uXc)
+![image](https://cloudflare-r2-youkisiaiyixitielu.acofork.dpdns.org/fuwari-blog/img/QmcoF7K5sTkd4CRGTZPmnLwheAHpSf68RkZTd4ZST41uXc)
 
 如果你配置了Steam手机验证器，此时应该会弹出登录请求，允许它。然后前往终端界面输入 **Y** 并回车
 此时终端应该输出：**成功以 XXXXXXXXXX 的身份登录。**
 
-![image](https://r2.2x.nz/fuwari-blog/img/QmcuktSJjWFmufsLmrYRsbLa9ns7pvRXKWZ5EUyirasKt6)
+![image](https://cloudflare-r2-youkisiaiyixitielu.acofork.dpdns.org/fuwari-blog/img/QmcuktSJjWFmufsLmrYRsbLa9ns7pvRXKWZ5EUyirasKt6)
 
 如果此时登录的账号未被占用，则自动开始挂卡。
 

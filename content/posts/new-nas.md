@@ -3,7 +3,7 @@ title: 我买了个新NAS...
 published: 2025-02-23
 summary: "你可能不知道，我曾经购入过一台N100迷你主机，不久后便卖掉了，不过现在我又购入了，这是为什么呢？"
 cover:
-  image: 'https://r2.2x.nz/fuwari-blog/img/b8b7d06a-1ca4-4786-a147-5275f57dfb3b.webp'
+  image: 'https://cloudflare-r2-youkisiaiyixitielu.acofork.dpdns.org/fuwari-blog/img/b8b7d06a-1ca4-4786-a147-5275f57dfb3b.webp'
 tags: [NAS]
 categories: '随笔'
 draft: false 
