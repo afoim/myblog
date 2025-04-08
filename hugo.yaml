@@ -1,4 +1,4 @@
-baseURL: "https://2x.nz"
+baseURL: "https://acofork.dpdns.org"
 title: "AcoFork Blog"
 defaultContentLanguage: "zh-cn"  # 替换原来的 LanguageCode
 theme: "PaperMod"
@@ -42,7 +42,7 @@ params:
   homeInfoParams:
     Title: "欢迎！ 👋"
     Content: >
-      我是[AcoFork/二叉树树](https://link.me/acofork)。我来自[中国大陆](https://www.gov.cn)，本站部署在[Cloudflare Page](https://www.cloudflare-cn.com/developer-platform/products/pages/)，使用免费域名[DPDNS.ORG](https://domain.digitalplat.org/)，框架为[Hugo](https://gohugo.io/)，主题为[PaperMod](https://github.com/adityatelange/hugo-PaperMod)，经过本人深度魔改。这是一个技术博客，分享各类IT技术教程、服务器搭建、网络优化、NAS应用、
+      我是[AcoFork/二叉树树](https://link.me/acofork)。我来自[中国大陆](https://www.gov.cn)，本站部署在[Cloudflare Page](https://www.cloudflare-cn.com/developer-platform/products/pages/)，使用免费域名[DPDNS.ORG]，框架为[Hugo](https://gohugo.io/)，主题为[PaperMod](https://github.com/adityatelange/hugo-PaperMod)，经过本人深度魔改。这是一个技术博客，分享各类IT技术教程、服务器搭建、网络优化、NAS应用、
       云服务部署、开源工具探索及数字生活体验。专注于实用解决方案与前沿技术的尝试，
       为技术爱好者提供简明易懂的学习资源与实践指南。
   
