@@ -4,7 +4,7 @@ title: 自建邮局太麻烦？来用网易免费企业邮！绑定你的域名�
 published: 2025-03-12T18:04:34+08:00
 summary: "网易免费企业邮是一个免费的电子邮箱服务，它最重要的特点就是可以绑定你的域名，比如sudo@onani.cn，并且完全免费且能收能发！"
 cover:
-  image: "https://cloudflare-r2-youkisiaiyixitielu.acofork.dpdns.org/myblog/img/ce9c58a1-6515-4b07-8f4d-5ae55668d9f8.webp"
+  image: "https://r2.072103.xyz/myblog/img/ce9c58a1-6515-4b07-8f4d-5ae55668d9f8.webp"
 tags: [网易免费企业邮, 域名邮箱]
 categories: '教程'
 draft: false 
@@ -46,28 +46,28 @@ lang: ''
 
 登陆进去后大概是这样
 
-![](https://cloudflare-r2-youkisiaiyixitielu.acofork.dpdns.org/myblog/img/65e5b400-96d7-44c6-b16e-a7a409104c3c.webp)
+![](https://r2.072103.xyz/myblog/img/65e5b400-96d7-44c6-b16e-a7a409104c3c.webp)
 
 如果你不喜欢你的账户名，比如我的就是 **erchashush** @acofork.freeqiye.com，这个erchashush其实是可以更改的
 
 在组织机构管理中点击账号管理，选择新建账号
 
-![](https://cloudflare-r2-youkisiaiyixitielu.acofork.dpdns.org/myblog/img/a20e7931-c460-4134-b1b0-0fee82f8a7fc.webp)
+![](https://r2.072103.xyz/myblog/img/a20e7931-c460-4134-b1b0-0fee82f8a7fc.webp)
 
 然后写一个你想要的别名。绑定手机填你的，因为第一次登录需要验证码验证，如果填错了直接删除即可
 
-![](https://cloudflare-r2-youkisiaiyixitielu.acofork.dpdns.org/myblog/img/b9ac287d-ff90-4f8c-88ba-0d7bb1588f1c.webp)
+![](https://r2.072103.xyz/myblog/img/b9ac287d-ff90-4f8c-88ba-0d7bb1588f1c.webp)
 
 然后我们需要给这个新账号提权，如果你想用superadmin登录后台的话
 
-![](https://cloudflare-r2-youkisiaiyixitielu.acofork.dpdns.org/myblog/img/6f21feca-984d-444e-b80f-bf1a28e4cf79.webp)
+![](https://r2.072103.xyz/myblog/img/6f21feca-984d-444e-b80f-bf1a28e4cf79.webp)
 
 接着右上角退出登录，然后使用新创建的管理员账户登录
 
 ## 绑定你的域名
 
 前往组织机构管理 - 域名管理 - 添加域名
-![](https://cloudflare-r2-youkisiaiyixitielu.acofork.dpdns.org/myblog/img/2fa04b72-f0e7-43c0-9c2a-1daab62e67cb.webp)
+![](https://r2.072103.xyz/myblog/img/2fa04b72-f0e7-43c0-9c2a-1daab62e67cb.webp)
 
 根据提示在你的域名提供商（比如Cloudflare）配置TXT记录和MX记录即可
 
@@ -79,8 +79,8 @@ lang: ''
 
 ## 效果展示
 
-![](https://cloudflare-r2-youkisiaiyixitielu.acofork.dpdns.org/myblog/img/614794bd-d84d-4b66-b816-1d6d6ce73727.webp)
+![](https://r2.072103.xyz/myblog/img/614794bd-d84d-4b66-b816-1d6d6ce73727.webp)
 
 签名和发件人头像可以通过手机的网易邮箱大师设置
 
-![](https://cloudflare-r2-youkisiaiyixitielu.acofork.dpdns.org/myblog/img/57f759bc-46fb-4f99-b6bb-751464661240.webp)
+![](https://r2.072103.xyz/myblog/img/57f759bc-46fb-4f99-b6bb-751464661240.webp)

@@ -3,7 +3,7 @@ title: 关于Rewrite MV无法播放\没有画面的解决方法
 published: 2024-11-28
 summary: "Rewrite打完才发现MV一个没看到"
 cover:
-  image: "https://cloudflare-r2-youkisiaiyixitielu.acofork.dpdns.org/fuwari-blog/img/bafybeihhyuk3zjqkisf66swxft4j5srv3g7wozy3zn4ykpsh3cuveuuwb4"
+  image: "https://r2.072103.xyz/fuwari-blog/img/bafybeihhyuk3zjqkisf66swxft4j5srv3g7wozy3zn4ykpsh3cuveuuwb4"
 tags: [Rewrite]
 categories: '随笔'
 draft: false 
@@ -14,11 +14,11 @@ lang: ''
 
 安装这个即可
 
-![image](https://cloudflare-r2-youkisiaiyixitielu.acofork.dpdns.org/fuwari-blog/img/bafkreieb2qknggudxx7sc723jheso6grhgemznjqb5n6yqwsrvgqkqn4ba)
+![image](https://r2.072103.xyz/fuwari-blog/img/bafkreieb2qknggudxx7sc723jheso6grhgemznjqb5n6yqwsrvgqkqn4ba)
 
 然后游戏内改为Windows Media Player
 
-![image](https://cloudflare-r2-youkisiaiyixitielu.acofork.dpdns.org/fuwari-blog/img/bafkreihujn3jctibvixv4trpsu5j4d2v7de2ibzea6xe6pzmithymffpqu)
+![image](https://r2.072103.xyz/fuwari-blog/img/bafkreihujn3jctibvixv4trpsu5j4d2v7de2ibzea6xe6pzmithymffpqu)
 
 # 汉化组提供的解决方法
 
@@ -26,4 +26,4 @@ lang: ''
 
 然后游戏内改为 MCI
 
-![image](https://cloudflare-r2-youkisiaiyixitielu.acofork.dpdns.org/fuwari-blog/img/bafkreic7a3tnnoxyn646tzy35nec2oioz4ktffuizb5ge67ibww5ntnmpq)
+![image](https://r2.072103.xyz/fuwari-blog/img/bafkreic7a3tnnoxyn646tzy35nec2oioz4ktffuizb5ge67ibww5ntnmpq)

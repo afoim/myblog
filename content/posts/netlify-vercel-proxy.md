@@ -3,7 +3,7 @@ title: Netlify、Vercel反代网站
 published: 2025-04-04
 summary: "会用Netlify，家宽建站不是梦！"
 cover:
-  image: 'https://cloudflare-r2-youkisiaiyixitielu.acofork.dpdns.org/halo/image.png'
+  image: 'https://r2.072103.xyz/halo/image.png'
 tags: [Netlify, Vercel]
 categories: '随笔'
 draft: false 
