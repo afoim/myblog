@@ -232,7 +232,7 @@
     }
 
     async function testLatency() {
-        const url = 'https://www.onani.cn';
+        const url = window.location.origin;
         const startTime = performance.now();
         try {
             const response = await fetch(url, { mode: 'no-cors' });
