@@ -97,6 +97,10 @@ menu:
     #   name: 记录
     #   url: /record/
     #   weight: 9
+    - identifier: RSS
+      name: RSS
+      url: /index.xml
+      weight: 5
     - identifier: categories
       name: 分类
       url: /categories/
