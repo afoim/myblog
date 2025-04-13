@@ -1,4 +1,4 @@
-baseURL: "https://blog.072103.xyz"
+baseURL: "https://072103.xyz"
 title: "AcoFork Blog"
 defaultContentLanguage: "zh-cn"  # 替换原来的 LanguageCode
 theme: "PaperMod"
@@ -18,6 +18,11 @@ ignoreLogs:
 
 # 启用首页个人简介展示
 params:
+  socialIcons:
+    - name: RSS
+      url: "https://072103.xyz/index.xml"
+  ShowFullTextinRSS: true
+
   # 文章许可
   license: "CC BY 4.0"
   license_link: "https://creativecommons.org/licenses/by/4.0/"

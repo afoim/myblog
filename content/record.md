@@ -1,7 +1,7 @@
 ---
 title: 记录
 published: 1999-01-01
-summary: ''
+summary: '一些记录，不定时更新'
 cover:
   image: ""
 tags: [Record]
