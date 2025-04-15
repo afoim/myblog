@@ -98,8 +98,8 @@ menu:
     #   url: /record/
     #   weight: 9
     - identifier: RSS
-      name: RSS
-      url: /index.xml
+      name: 订阅我
+      url: /subme/
       weight: 5
     - identifier: categories
       name: 分类
