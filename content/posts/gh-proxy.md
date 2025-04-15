@@ -35,6 +35,8 @@ lang: ''
 
 # 正式部署
 
+> 教程视频：https://www.bilibili.com/video/BV1jGd6YpE8z
+
 进入 dash.cloudflare.com
 
 创建新Worker，选择Hello World模板
