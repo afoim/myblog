@@ -40,7 +40,7 @@ params:
   # 分享按钮配置
   # ShareButtons: ["linkedin", "twitter"]
   # 是否禁用主题切换按钮
-  disableThemeToggle: false
+  disableThemeToggle: true
   assets:
     # favicon: "/images/Miyako.jpg"
   # 首页信息配置
@@ -61,14 +61,6 @@ params:
       dismiss: "同意"
       link: "了解更多"
       href: "/cookie-policy/"
-  
-  # 添加GDPR合规声明
-  privacy:
-    enabled: true     # 确保为true
-    hasCookie: true   # 确保为true
-    httpCookies:
-      enable: true
-      content: "本网站使用Cookie和类似技术来改善您的体验。继续使用本站即表示您同意我们的Cookie使用政策。"
 
   # 设置网站头像和首页头像
   profileMode:
