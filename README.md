@@ -1,10 +1,10 @@
 # myblog
-使用Hugo，PaperMod主题的个人博客
+使用Hugo，PaperMod主题的个人博客，经过深度魔改。如果您需要Fork此存储库部署请将其修改为自己的版本，不要Fork完原封不动直接发布！！！
 
 # 提交格式
-- **update** 无关于文章的更新
-- **{post}** 更新名为 `{post}.md` 的文章
+- **update** 无关于文章的更新。一般为框架更新，页面样式更新
+- **post** 更新文章
 
 ### e.g.
 - update:添加评论系统
-- autobangumi:删除一段蹊跷的代码
+- post:发布xx文章
