@@ -3,7 +3,7 @@ title: 记录
 published: 1999-01-01
 summary: '一些记录，不定时更新'
 cover:
-  image: ""
+  image: "https://hpic.072103.xyz"
 tags: [Record]
 categories: '记录'
 draft: false 

@@ -52,6 +52,19 @@
   </footer>
   {{- if (.Param "comments") }}
 
+    <!-- 帮助改进此文章 -->
+    <div class="improve-article">
+      <hr>
+      <p>发现文章有问题? 帮助我们改进此文章!</p>
+      <a href="https://github.com/afoim/myblog/blob/main/content/posts/{{ .File.BaseFileName }}.md" target="_blank" class="improve-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+          <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+        </svg>
+        在 Github 上编辑此页
+      </a>
+    </div>
+
     <!-- QQ交流群 -->
     <div class="qq-group">
       <h3>欢迎加入技术讨论QQ群</h3>
@@ -74,6 +87,9 @@
   async>
 </script>
   {{- end }}
+
+  <!-- 添加复制拦截脚本 -->
+  <script src="/js/copy-interceptor.js"></script>
 </article>
 
 {{- end }}{{/* end main */}}

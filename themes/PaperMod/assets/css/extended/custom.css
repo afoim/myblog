@@ -92,3 +92,40 @@
     opacity: 0.9;
     transform: translateY(-2px);
 }
+
+/* 改进文章按钮样式 */
+.improve-article {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.improve-article hr {
+    margin: 2rem 0;
+}
+
+.improve-article p {
+    color: var(--secondary);
+    margin-bottom: 1rem;
+}
+
+.improve-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--primary);
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.improve-btn:hover {
+    background: var(--border);
+}
+
+.improve-btn svg {
+    width: 18px;
+    height: 18px;
+}
